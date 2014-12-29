@@ -167,4 +167,35 @@ author="Nathaniel Watson (nwatson.nz)">
 			 </p:Content>
 		</Shape>
 
+		<Shape id="SoftKeys" displayName="Soft keys" icon="Icons/SoftKeys.png">
+			<Properties>
+				 <PropertyGroup>
+					  <Property name="box" type="Dimension" p:lockHeight="true">360,48</Property>
+				 </PropertyGroup>
+				 <PropertyGroup name="Background">
+					  <Property name="fillColor" displayName="Color" type="Color">#000000FF</Property>
+				 </PropertyGroup>
+			</Properties>
+			<Behaviors>
+				<For ref="bg">
+					<Box>$box</Box>
+					<Fill>$fillColor</Fill>
+				</For>
+				<For ref="icons">
+					<Transform>[translate(($box.w / 2) - 108, 15)]</Transform>
+				</For>
+			</Behaviors>
+			<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+											xmlns="http://www.w3.org/2000/svg">
+
+				<rect
+				id="bg" />
+				<g id="icons" style="stroke-width: 2px; stroke:#FFFFFF; stroke-opacity:0.9; fill: none;stroke-linejoin:round">
+					<path d="m202.17 2h12c.554 0 1 .446 1 1v12c0 .554-.446 1-1 1h-12c-.554 0-1-.446-1-1v-12c0-.554.446-1 1-1z"/>
+					<path d="m15.168 9c0 10.196 1.286 9.454-7.544 4.356-8.83-5.098-8.83-3.613 0-8.711 8.83-5.098 7.544-5.841 7.544 4.356z"/>
+					<path d="m116.17 9c0 4.418-3.582 8-8 8-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8 4.418 0 8 3.582 8 8z"/>
+				</g>
+				
+			</p:Content>
+		  </Shape>
 </Shapes>
