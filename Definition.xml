@@ -7,10 +7,6 @@ displayName="Android Lollipop"
 description="UI components from Android 5.0 (Lollipop)"
 author="Nathaniel Watson (nwatson.nz)">
 
-
-
-
-
 	<Properties>
 		<PropertyGroup>
 			<Property name="iconBg" displayName="Icon background color" type="Color">#ffffff49</Property>
@@ -25,149 +21,147 @@ author="Nathaniel Watson (nwatson.nz)">
 		</PropertyGroup>
 	</Properties>
 
-<Shape id="ActionBar" displayName="Action Bar" icon="Icons/ActionBar.png">
-				<Properties>
-					 <PropertyGroup>
-						  <Property name="box" type="Dimension">360,56</Property>
-					 </PropertyGroup>
-					 <PropertyGroup name="Background">
-						  <Property name="fillColor" displayName="Color" type="Color"><E>$$fillColor</E></Property>
-					 </PropertyGroup>
-				</Properties>
-				<Behaviors>
-					<For ref="bg">
-						 <Box>$box</Box>
-						 <Fill>$fillColor</Fill>
-					</For>
-					<For ref="shadow">
-						<Transform>[translate(0, $box.h), scale($box.w, 1)]</Transform>
-						 <Fill>#FF00FFFF</Fill>
-					</For>
-				</Behaviors>
-				<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
-												xmlns="http://www.w3.org/2000/svg">
+	<Shape id="ActionBar" displayName="Action Bar" icon="Icons/ActionBar.png">
+		<Properties>
+			 <PropertyGroup>
+				  <Property name="box" type="Dimension">360,56</Property>
+			 </PropertyGroup>
+			 <PropertyGroup name="Background">
+				  <Property name="fillColor" displayName="Color" type="Color"><E>$$fillColor</E></Property>
+			 </PropertyGroup>
+		</Properties>
+		<Behaviors>
+			<For ref="bg">
+				 <Box>$box</Box>
+				 <Fill>$fillColor</Fill>
+			</For>
+			<For ref="shadow">
+				<Transform>[translate(0, $box.h), scale($box.w, 1)]</Transform>
+				 <Fill>#FF00FFFF</Fill>
+			</For>
+		</Behaviors>
+		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+										xmlns="http://www.w3.org/2000/svg">
 
-					 <defs>
-					<linearGradient
-						id="shadowFill"
-						x1="0%"
-						y1="0%"
-						x2="0%"
-						y2="100%" >
+			 <defs>
+			<linearGradient
+				id="shadowFill"
+				x1="0%"
+				y1="0%"
+				x2="0%"
+				y2="100%" >
 
-						<stop
-							id="stop1"
-							offset="0"
-							style="stop-color:#000000;stop-opacity:0.259" />
-						<stop
-							id="stop2"
-							offset="1"
-							style="stop-color:#000000;stop-opacity:0" />
-					</linearGradient>
-					 </defs>
-					 <rect
-					 id="bg" />
-				 <rect
-					 id="shadow"
-					 width="1" height="6"
-					 style="fill: url(#shadowFill)" />
-				</p:Content>
-		  </Shape>
+				<stop
+					id="stop1"
+					offset="0"
+					style="stop-color:#000000;stop-opacity:0.259" />
+				<stop
+					id="stop2"
+					offset="1"
+					style="stop-color:#000000;stop-opacity:0" />
+			</linearGradient>
+			 </defs>
+			 <rect
+			 id="bg" />
+		 <rect
+			 id="shadow"
+			 width="1" height="6"
+			 style="fill: url(#shadowFill)" />
+		</p:Content>
+	</Shape>
 
-		  <Shape id="NotificationBar" displayName="Notification Bar" icon="Icons/NotificationBar.png">
-			 <Properties>
-				  <PropertyGroup>
-						<Property name="box" type="Dimension" p:lockHeight="true">360,24</Property>
-				  </PropertyGroup>
-				  <PropertyGroup name="Background">
-						<Property name="fillColor" displayName="Background color" type="Color">#00000025</Property>
-				  </PropertyGroup>
-			 </Properties>
-			 <Behaviors>
-				  <For ref="bg">
-						<Box>$box</Box>
-						<Fill>$fillColor</Fill>
-				  </For>
-				  <For ref="icons">
-						<Transform>[translate($box.w - 120, 5)]</Transform>
-				  </For>
-			 </Behaviors>
-			 <p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
-											 xmlns="http://www.w3.org/2000/svg">
+	<Shape id="NotificationBar" displayName="Notification Bar" icon="Icons/NotificationBar.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension" p:lockHeight="true">360,24</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Background color" type="Color">#00000025</Property>
+			</PropertyGroup>
+		</Properties>
+		
+		<Behaviors>
+			<For ref="bg">
+				<Box>$box</Box>
+				<Fill>$fillColor</Fill>
+			</For>
+			<For ref="icons">
+				<Transform>[translate($box.w - 120, 5)]</Transform>
+			</For>
+		</Behaviors>
 
-				<defs>
-					<linearGradient
-						id="statusIconBg" >
-							<stop
-							style="stop-color:#ffffff;stop-opacity:0.28627452;"
-							offset="0" />
-					</linearGradient>
-					<linearGradient
-						id="statusIconFg" >
-							<stop
-							style="stop-color:#ffffff;stop-opacity:0.90196079;"
-							offset="0" />
-					</linearGradient>
-				</defs>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+		           xmlns="http://www.w3.org/2000/svg">
 
-				<rect
-					height="24"
-					p:lockH="true"
-					id="bg" />
+			<defs>
+				<linearGradient id="statusIconBg">
+					<stop
+					style="stop-color:#ffffff;stop-opacity:0.28627452;"
+					offset="0" />
+				</linearGradient>
+				<linearGradient id="statusIconFg">
+					<stop
+						style="stop-color:#ffffff;stop-opacity:0.90196079;"
+						offset="0" />
+				</linearGradient>
+			</defs>
 
-				<g
-				  id="icons">
+			<rect height="24"
+			      p:lockH="true"
+			      id="bg" />
 
-			  		<g style="fill: url(#statusIconBg)">
-						<path d="m0 2.532c4.821-3.376 11.239-3.376 16.06 0l-8.03 11.468z"/>
-						<path d="m28.662 14l14-14v14z"/>
-						<path d="m60.662 0v1h-1c-.554 0-1 .446-1 1v11c0 .554.446 1 1 1h7c.554 0 1-.446 1-1v-11c0-.554-.446-1-1-1h-1v-1h-5"/>
-					</g>
+			<g id="icons">
 
-					<g style="fill: url(#statusIconFg)">
-						<path d="m2.026 5.426c3.605-2.524 8.403-2.524 12.01 0l-6 8.575z"/>
-						<path d="m28.662 14l7-7v7z"/>
-						<path d="m58.662 7v6c0 .554.446 1 1 1h7c.554 0 1-.446 1-1v-6z"/>
-
-						<path d="m82.71 13h-.879v-9.609l-2.9 1.077v-.82l3.633-1.348h.146v10.701"/>
-						<path d="m93.63 13h-6.68v-.674l3.494-3.962c.327-.371.603-.706.828-1 .229-.298.413-.574.549-.828.142-.259.242-.5.3-.725.063-.229.095-.457.095-.681 0-.322-.049-.615-.146-.879-.093-.269-.234-.5-.425-.696-.186-.195-.417-.347-.696-.454-.278-.107-.598-.161-.959-.161-.371 0-.706.063-1 .19-.293.122-.544.293-.754.513-.205.22-.364.481-.476.784-.112.303-.168.632-.168.989h-.872c0-.439.073-.854.22-1.245.151-.391.369-.732.652-1.025.283-.293.625-.525 1.025-.696.405-.171.864-.256 1.377-.256.479 0 .911.066 1.296.198.386.127.713.315.981.564.269.244.474.544.615.901.146.352.22.752.22 1.201 0 .322-.059.647-.176.974-.117.327-.273.652-.469.974-.195.322-.42.642-.674.959-.254.317-.515.63-.784.938l-2.974 3.362h5.603v.74"/>
-						<path d="m95.2 12.473c0-.171.054-.315.161-.432.112-.122.266-.183.461-.183.195 0 .349.061.461.183.112.117.168.261.168.432 0 .171-.056.313-.168.425-.112.107-.266.161-.461.161-.195 0-.349-.054-.461-.161-.107-.112-.161-.254-.161-.425m.015-6.76c0-.171.054-.315.161-.432.112-.122.266-.183.461-.183.195 0 .349.061.461.183.112.117.168.261.168.432 0 .171-.056.313-.168.425-.112.107-.266.161-.461.161-.195 0-.349-.054-.461-.161-.107-.112-.161-.254-.161-.425"/>
-						<path d="m100.38 7.192h.894c.41 0 .769-.054 1.077-.161.312-.112.574-.261.784-.447.21-.19.366-.41.469-.659.107-.254.161-.522.161-.806 0-.322-.046-.615-.139-.879-.088-.269-.225-.498-.41-.688-.181-.195-.413-.347-.696-.454-.278-.107-.61-.161-.996-.161-.337 0-.647.051-.93.154-.283.103-.53.249-.74.439-.21.19-.374.422-.491.696-.117.269-.176.571-.176.908h-.879c0-.43.081-.825.242-1.187.166-.361.391-.671.674-.93.288-.264.627-.466 1.018-.608.396-.146.823-.22 1.282-.22.469 0 .896.066 1.282.198.386.132.713.325.981.579.273.249.483.557.63.923.151.366.227.786.227 1.26 0 .239-.039.479-.117.718-.078.234-.193.457-.344.667-.151.21-.342.403-.571.579-.229.171-.493.313-.791.425.352.098.654.232.908.403.254.166.461.361.623.586.166.225.288.471.366.74.083.269.124.549.125.842 0 .483-.083.913-.249 1.289-.166.376-.396.696-.688.959-.293.259-.64.457-1.04.593-.4.132-.835.198-1.304.198-.435 0-.857-.063-1.267-.19-.405-.127-.769-.315-1.091-.564-.317-.254-.574-.571-.769-.952-.19-.381-.286-.825-.286-1.333h.879c0 .337.061.647.183.93.127.283.303.527.527.732.225.2.491.356.798.469.313.112.654.168 1.025.168.757 0 1.345-.193 1.765-.579.425-.391.637-.955.637-1.692 0-.386-.066-.718-.198-.996-.127-.278-.31-.505-.549-.681-.234-.181-.518-.312-.85-.396-.327-.083-.691-.125-1.091-.125h-.894v-.747"/>
-						<path d="m113.18 8.554c0 .781-.073 1.46-.22 2.036-.146.576-.359 1.055-.637 1.436-.278.376-.62.657-1.025.842-.405.186-.867.278-1.384.278-.513 0-.972-.093-1.377-.278-.405-.186-.75-.466-1.033-.842-.283-.381-.5-.859-.652-1.436-.151-.576-.227-1.255-.227-2.036v-1.802c0-.781.073-1.458.22-2.029.151-.576.366-1.05.645-1.421.283-.376.627-.654 1.033-.835.405-.186.864-.278 1.377-.278.513 0 .972.093 1.377.278.41.181.754.459 1.033.835.283.371.498.845.645 1.421.151.571.227 1.248.227 2.029v1.802m-.879-1.912c0-1.221-.2-2.144-.601-2.769-.396-.625-.996-.937-1.802-.938-.801 0-1.401.313-1.802.938-.4.625-.601 1.548-.601 2.769v2.01c0 .601.051 1.135.154 1.604.103.464.254.857.454 1.179.205.317.459.559.762.725.303.166.652.249 1.047.249.4 0 .749-.083 1.047-.249.303-.166.552-.408.747-.725.2-.322.349-.715.447-1.179.098-.469.146-1 .146-1.604v-2.01"/>
-					</g>
+				<g style="fill: url(#statusIconBg)">
+					<path d="m0 2.532c4.821-3.376 11.239-3.376 16.06 0l-8.03 11.468z"/>
+					<path d="m28.662 14l14-14v14z"/>
+					<path d="m60.662 0v1h-1c-.554 0-1 .446-1 1v11c0 .554.446 1 1 1h7c.554 0 1-.446 1-1v-11c0-.554-.446-1-1-1h-1v-1h-5"/>
 				</g>
-			 </p:Content>
-		</Shape>
 
-		<Shape id="SoftKeys" displayName="Soft keys" icon="Icons/SoftKeys.png">
-			<Properties>
-				 <PropertyGroup>
-					  <Property name="box" type="Dimension" p:lockHeight="true">360,48</Property>
-				 </PropertyGroup>
-				 <PropertyGroup name="Background">
-					  <Property name="fillColor" displayName="Color" type="Color">#000000FF</Property>
-				 </PropertyGroup>
-			</Properties>
-			<Behaviors>
-				<For ref="bg">
-					<Box>$box</Box>
-					<Fill>$fillColor</Fill>
-				</For>
-				<For ref="icons">
-					<Transform>[translate(($box.w / 2) - 108, 15)]</Transform>
-				</For>
-			</Behaviors>
-			<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
-											xmlns="http://www.w3.org/2000/svg">
+				<g style="fill: url(#statusIconFg)">
+					<path d="m2.026 5.426c3.605-2.524 8.403-2.524 12.01 0l-6 8.575z"/>
+					<path d="m28.662 14l7-7v7z"/>
+					<path d="m58.662 7v6c0 .554.446 1 1 1h7c.554 0 1-.446 1-1v-6z"/>
 
-				<rect
-				id="bg" />
-				<g id="icons" style="stroke-width: 2px; stroke:#FFFFFF; stroke-opacity:0.9; fill: none;stroke-linejoin:round">
-					<path d="m202.17 2h12c.554 0 1 .446 1 1v12c0 .554-.446 1-1 1h-12c-.554 0-1-.446-1-1v-12c0-.554.446-1 1-1z"/>
-					<path d="m15.168 9c0 10.196 1.286 9.454-7.544 4.356-8.83-5.098-8.83-3.613 0-8.711 8.83-5.098 7.544-5.841 7.544 4.356z"/>
-					<path d="m116.17 9c0 4.418-3.582 8-8 8-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8 4.418 0 8 3.582 8 8z"/>
+					<path d="m82.71 13h-.879v-9.609l-2.9 1.077v-.82l3.633-1.348h.146v10.701"/>
+					<path d="m93.63 13h-6.68v-.674l3.494-3.962c.327-.371.603-.706.828-1 .229-.298.413-.574.549-.828.142-.259.242-.5.3-.725.063-.229.095-.457.095-.681 0-.322-.049-.615-.146-.879-.093-.269-.234-.5-.425-.696-.186-.195-.417-.347-.696-.454-.278-.107-.598-.161-.959-.161-.371 0-.706.063-1 .19-.293.122-.544.293-.754.513-.205.22-.364.481-.476.784-.112.303-.168.632-.168.989h-.872c0-.439.073-.854.22-1.245.151-.391.369-.732.652-1.025.283-.293.625-.525 1.025-.696.405-.171.864-.256 1.377-.256.479 0 .911.066 1.296.198.386.127.713.315.981.564.269.244.474.544.615.901.146.352.22.752.22 1.201 0 .322-.059.647-.176.974-.117.327-.273.652-.469.974-.195.322-.42.642-.674.959-.254.317-.515.63-.784.938l-2.974 3.362h5.603v.74"/>
+					<path d="m95.2 12.473c0-.171.054-.315.161-.432.112-.122.266-.183.461-.183.195 0 .349.061.461.183.112.117.168.261.168.432 0 .171-.056.313-.168.425-.112.107-.266.161-.461.161-.195 0-.349-.054-.461-.161-.107-.112-.161-.254-.161-.425m.015-6.76c0-.171.054-.315.161-.432.112-.122.266-.183.461-.183.195 0 .349.061.461.183.112.117.168.261.168.432 0 .171-.056.313-.168.425-.112.107-.266.161-.461.161-.195 0-.349-.054-.461-.161-.107-.112-.161-.254-.161-.425"/>
+					<path d="m100.38 7.192h.894c.41 0 .769-.054 1.077-.161.312-.112.574-.261.784-.447.21-.19.366-.41.469-.659.107-.254.161-.522.161-.806 0-.322-.046-.615-.139-.879-.088-.269-.225-.498-.41-.688-.181-.195-.413-.347-.696-.454-.278-.107-.61-.161-.996-.161-.337 0-.647.051-.93.154-.283.103-.53.249-.74.439-.21.19-.374.422-.491.696-.117.269-.176.571-.176.908h-.879c0-.43.081-.825.242-1.187.166-.361.391-.671.674-.93.288-.264.627-.466 1.018-.608.396-.146.823-.22 1.282-.22.469 0 .896.066 1.282.198.386.132.713.325.981.579.273.249.483.557.63.923.151.366.227.786.227 1.26 0 .239-.039.479-.117.718-.078.234-.193.457-.344.667-.151.21-.342.403-.571.579-.229.171-.493.313-.791.425.352.098.654.232.908.403.254.166.461.361.623.586.166.225.288.471.366.74.083.269.124.549.125.842 0 .483-.083.913-.249 1.289-.166.376-.396.696-.688.959-.293.259-.64.457-1.04.593-.4.132-.835.198-1.304.198-.435 0-.857-.063-1.267-.19-.405-.127-.769-.315-1.091-.564-.317-.254-.574-.571-.769-.952-.19-.381-.286-.825-.286-1.333h.879c0 .337.061.647.183.93.127.283.303.527.527.732.225.2.491.356.798.469.313.112.654.168 1.025.168.757 0 1.345-.193 1.765-.579.425-.391.637-.955.637-1.692 0-.386-.066-.718-.198-.996-.127-.278-.31-.505-.549-.681-.234-.181-.518-.312-.85-.396-.327-.083-.691-.125-1.091-.125h-.894v-.747"/>
+					<path d="m113.18 8.554c0 .781-.073 1.46-.22 2.036-.146.576-.359 1.055-.637 1.436-.278.376-.62.657-1.025.842-.405.186-.867.278-1.384.278-.513 0-.972-.093-1.377-.278-.405-.186-.75-.466-1.033-.842-.283-.381-.5-.859-.652-1.436-.151-.576-.227-1.255-.227-2.036v-1.802c0-.781.073-1.458.22-2.029.151-.576.366-1.05.645-1.421.283-.376.627-.654 1.033-.835.405-.186.864-.278 1.377-.278.513 0 .972.093 1.377.278.41.181.754.459 1.033.835.283.371.498.845.645 1.421.151.571.227 1.248.227 2.029v1.802m-.879-1.912c0-1.221-.2-2.144-.601-2.769-.396-.625-.996-.937-1.802-.938-.801 0-1.401.313-1.802.938-.4.625-.601 1.548-.601 2.769v2.01c0 .601.051 1.135.154 1.604.103.464.254.857.454 1.179.205.317.459.559.762.725.303.166.652.249 1.047.249.4 0 .749-.083 1.047-.249.303-.166.552-.408.747-.725.2-.322.349-.715.447-1.179.098-.469.146-1 .146-1.604v-2.01"/>
 				</g>
-				
-			</p:Content>
-		  </Shape>
+			</g>
+		</p:Content>
+	</Shape>
+
+	<Shape id="SoftKeys" displayName="Soft keys" icon="Icons/SoftKeys.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension" p:lockHeight="true">360,48</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Color" type="Color">#000000FF</Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="bg">
+				<Box>$box</Box>
+				<Fill>$fillColor</Fill>
+			</For>
+			<For ref="icons">
+				<Transform>[translate(($box.w / 2) - 108, 15)]</Transform>
+			</For>
+		</Behaviors>
+
+		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+						xmlns="http://www.w3.org/2000/svg">
+
+			<rect id="bg" />
+			<g id="icons" style="stroke-width: 2px; stroke:#FFFFFF; stroke-opacity:0.9; fill: none;stroke-linejoin:round">
+				<path d="m202.17 2h12c.554 0 1 .446 1 1v12c0 .554-.446 1-1 1h-12c-.554 0-1-.446-1-1v-12c0-.554.446-1 1-1z"/>
+				<path d="m15.168 9c0 10.196 1.286 9.454-7.544 4.356-8.83-5.098-8.83-3.613 0-8.711 8.83-5.098 7.544-5.841 7.544 4.356z"/>
+				<path d="m116.17 9c0 4.418-3.582 8-8 8-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8 4.418 0 8 3.582 8 8z"/>
+			</g>
+		</p:Content>
+	</Shape>
 </Shapes>
