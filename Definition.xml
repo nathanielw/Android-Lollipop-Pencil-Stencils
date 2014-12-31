@@ -268,10 +268,6 @@ author="Nathaniel Watson (nwatson.nz)">
 				<Property name="fillColor" displayName="Color" type="Color">#FFFFFF</Property>
 			</PropertyGroup>
 
-			<PropertyGroup name="Shadow">
-				<Property name="shadowColor" displayName="Color" type="Color"></Property>
-			</PropertyGroup>
-
 			<PropertyGroup name="Text">
 				<Property name="label" displayName="Label" 
 					type="PlainText">BUTTON</Property>
@@ -344,5 +340,58 @@ author="Nathaniel Watson (nwatson.nz)">
 		<PropertyValue name="fillColor">#FFFFFF00</PropertyValue>
 		<PropertyValue name="textColor"><E>$$defaultTextColor</E></PropertyValue>
 		<PropertyValue name="shadow">false</PropertyValue>
+	</Shortcut>
+
+	<Shape id="FloatingActionButton" displayName="Floating Action Button" icon="Icons/FloatingActionButton.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension" p:lockRatio="true">56,56</Property>
+				<Property name="shadow" displayName="Shadow" type="Bool">true</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Color" type="Color"><E>$$fillColor</E></Property>
+			</PropertyGroup>
+		</Properties>
+		<Behaviors>
+			<For ref="bg">
+				<EllipseFit>$box</EllipseFit>
+				<Fill>$fillColor</Fill>
+				<ApplyFilter>$shadow</ApplyFilter>
+			</For>
+		</Behaviors>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+
+			<defs>
+				<filter id="dropshadow">
+					<feFlood
+						flood-opacity="0.35"
+						flood-color="rgb(0,0,0)"
+						result="flood"
+						id="flood" />
+					<feComposite
+						in="flood"
+						in2="SourceGraphic"
+						operator="in"
+						result="composite1" />
+					<feGaussianBlur
+						stdDeviation="2"
+						result="blur" />
+					<feOffset
+						dx="0"
+						dy="1"
+						result="offset" />
+					<feComposite
+						in="SourceGraphic"
+						in2="offset"
+						operator="over" />
+				</filter>
+			</defs>
+			<ellipse id="bg" rx="23" ry="23" p:filter="url(#dropshadow)" />
+
+		</p:Content>
+	</Shape>
+
+	<Shortcut displayName="Floating Action Button (Small)" icon="Icons/FloatingActionButtonSmall.png" to="FloatingActionButton">
+		<PropertyValue name="box">40,40</PropertyValue>
 	</Shortcut>
 </Shapes>
