@@ -30,10 +30,6 @@ author="Nathaniel Watson (nwatson.nz)">
 			.getService(Components.interfaces.nsIConsoleService)
 			.logStringMessage(str);
 		}
-		
-			collection.setShadow = function (shape) {
-				Console.log(shape);
-			};
 		]]>
 	</Script>
 
@@ -55,24 +51,6 @@ author="Nathaniel Watson (nwatson.nz)">
 				<Transform>[translate(0, $box.h), scale($box.w, 1)]</Transform>
 			</For>
 		</Behaviors>
-
-		<Actions>
-			<Action id="makeSquares" displayName="Make Squared">
-				<Impl>
-
-
-
-					var output = '';
-					for (var property in this) {
-					  output += property + ': ' + this[property]+'; ';
-					}
-
-
-
-					this.def.collection.log(output);
-				</Impl>
-			</Action>
-		</Actions>
 
 		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
 										xmlns="http://www.w3.org/2000/svg">
@@ -215,6 +193,16 @@ author="Nathaniel Watson (nwatson.nz)">
 				<Property name="bgColor" displayName="Background Color" type="Color">#0000002B</Property>
 			</PropertyGroup>
 		</Properties>
+
+		<Actions>
+			<Action id="getSnappingGuide">
+				<Impl>
+				return [
+					new SnappingData("Division", this.getBounding().y + this.getProperty("height").y, "HCenter", false, this.id)
+				];
+				</Impl>
+			</Action>
+		</Actions>
 		<Behaviors>
 			<For ref="bg">
 				<Box>new Dimension($box.w, $height.y)</Box>
