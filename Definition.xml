@@ -13,13 +13,29 @@ author="Nathaniel Watson (nwatson.nz)">
 		</PropertyGroup>
 
 		<PropertyGroup name="Text">
-			<Property name="defaultTextFont" type="Font" displayName="Default Font">"Roboto Medium", Roboto, Arial,sans-serif|normal|normal|13px</Property>
-			<Property name="defaultTextColor" type="Color" displayName="Default Text Color">#FFFFFFFF</Property>
+			<Property name="defaultTextFont" type="Font" displayName="Default Font">"Roboto Medium", Roboto, Arial,sans-serif|500|normal|14px</Property>
+			<Property name="defaultTextColor" type="Color" displayName="Default Text Color">#212121ff</Property>
 		</PropertyGroup>
 		<PropertyGroup name="Background">
 			<Property name="fillColor" type="Color" displayName="Default Background Color">#00bcd4ff</Property>
 		</PropertyGroup>
 	</Properties>
+
+
+	<Script>
+		<![CDATA[
+
+		collection.log = function (str) {
+			Components.classes['@mozilla.org/consoleservice;1']
+			.getService(Components.interfaces.nsIConsoleService)
+			.logStringMessage(str);
+		}
+		
+			collection.setShadow = function (shape) {
+				Console.log(shape);
+			};
+		]]>
+	</Script>
 
 	<Shape id="ActionBar" displayName="Action Bar" icon="Icons/ActionBar.png">
 		<Properties>
@@ -37,9 +53,27 @@ author="Nathaniel Watson (nwatson.nz)">
 			</For>
 			<For ref="shadow">
 				<Transform>[translate(0, $box.h), scale($box.w, 1)]</Transform>
-				 <Fill>#FF00FFFF</Fill>
 			</For>
 		</Behaviors>
+
+		<Actions>
+			<Action id="makeSquares" displayName="Make Squared">
+				<Impl>
+
+
+
+					var output = '';
+					for (var property in this) {
+					  output += property + ': ' + this[property]+'; ';
+					}
+
+
+
+					this.def.collection.log(output);
+				</Impl>
+			</Action>
+		</Actions>
+
 		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
 										xmlns="http://www.w3.org/2000/svg">
 
@@ -164,4 +198,151 @@ author="Nathaniel Watson (nwatson.nz)">
 			</g>
 		</p:Content>
 	</Shape>
+
+	<Shape id="BottomSheet" displayName="Bottom Sheet" icon="Icons/BottomSheet.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">360,224</Property>
+
+				<Property name="height" displayName="Height" 
+					type="Handle"
+					p:lockX="true"
+					p:minX="0"
+					p:maxX="$box.h">0,50</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Sheet Color" type="Color">#FAFAFAFF</Property>
+				<Property name="bgColor" displayName="Background Color" type="Color">#0000002B</Property>
+			</PropertyGroup>
+		</Properties>
+		<Behaviors>
+			<For ref="bg">
+				<Box>new Dimension($box.w, $height.y)</Box>
+				<Fill>$bgColor</Fill>
+			</For>
+			<For ref="sheet">
+				<Box>new Dimension($box.w, $box.h - $height.y)</Box>
+				<Fill>$fillColor</Fill>
+				<Transform>[translate(0, $height.y)]</Transform>
+			</For>
+			<For ref="shadow">
+				<Transform>[translate(0, $height.y -6), scale($box.w, 1)]</Transform>
+			</For>
+		</Behaviors>
+		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+										xmlns="http://www.w3.org/2000/svg">
+
+			<defs>
+				<linearGradient
+					id="shadowFill"
+					x1="0%"
+					y1="0%"
+					x2="0%"
+					y2="100%" >
+
+					<stop
+						id="stop1"
+						offset="0"
+						style="stop-color:#000000;stop-opacity:0" />
+					<stop
+						id="stop2"
+						offset="1"
+						style="stop-color:#000000;stop-opacity:0.129" />
+				</linearGradient>
+			</defs>
+			<rect id="bg" />
+			<rect id="sheet" />
+	 		<rect id="shadow"
+			width="1" height="6"
+			style="fill: url(#shadowFill)" />
+		</p:Content>
+	</Shape>
+
+	<Shape id="Button" displayName="Button" icon="Icons/Button.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">96,36</Property>
+				<Property name="shadow" displayName="Shadow" type="Bool">true</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Color" type="Color">#FFFFFF</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Shadow">
+				<Property name="shadowColor" displayName="Color" type="Color"></Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Text">
+				<Property name="label" displayName="Label" 
+					type="PlainText">BUTTON</Property>
+				<Property name="textColor" displayName="Color"
+					type="Color"><E>$$defaultTextColor</E></Property>
+				<Property name="textFont"
+					displayName="Font"
+					type="Font"><E>$$defaultTextFont</E></Property>
+			</PropertyGroup>
+		</Properties>
+		<Behaviors>
+			<For ref="bg">
+				<Box>$box</Box>
+				<Fill>$fillColor</Fill>
+				<ApplyFilter>$shadow</ApplyFilter>
+			</For>
+
+
+			<For ref="text">
+				<TextContent>$label</TextContent>
+				<Font>$textFont</Font>
+				<Fill>$textColor</Fill>
+				<Color>$textColor</Color>
+
+				<BoxFit>
+					<Arg>new Bound(0, 0, $box.w, $box.h)</Arg>
+					<Arg>new Alignment(1, 1)</Arg>
+				</BoxFit>
+			</For>
+		</Behaviors>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+
+			<defs>
+				<filter id="dropshadow">
+					<feFlood
+						flood-opacity="0.35"
+						flood-color="rgb(0,0,0)"
+						result="flood"
+						id="flood" />
+					<feComposite
+						in="flood"
+						in2="SourceGraphic"
+						operator="in"
+						result="composite1" />
+					<feGaussianBlur
+						stdDeviation="2"
+						result="blur" />
+					<feOffset
+						dx="0"
+						dy="1"
+						result="offset" />
+					<feComposite
+						in="SourceGraphic"
+						in2="offset"
+						operator="over" />
+				</filter>
+			</defs>
+
+			<rect id="bg" rx="2px" ry="2px" p:filter="url(#dropshadow)" />
+			<text id="text" />
+		</p:Content>
+	</Shape>
+
+	<Shortcut displayName="Button (Colored)" icon="Icons/ButtonColored.png" to="Button">
+		<PropertyValue name="fillColor"><E>$$fillColor</E></PropertyValue>
+		<PropertyValue name="textColor">#FFFFFF</PropertyValue>
+	</Shortcut>
+
+	<Shortcut displayName="Button (Flat)" icon="Icons/ButtonFlat.png" to="Button">
+		<PropertyValue name="fillColor">#FFFFFF00</PropertyValue>
+		<PropertyValue name="textColor"><E>$$defaultTextColor</E></PropertyValue>
+		<PropertyValue name="shadow">false</PropertyValue>
+	</Shortcut>
 </Shapes>
