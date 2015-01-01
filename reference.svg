@@ -190,6 +190,42 @@
          result="composite2"
          id="feComposite6140" />
     </filter>
+    <filter
+       x="-0.1"
+       id="filter3853"
+       inkscape:label="Drop Shadow"
+       color-interpolation-filters="sRGB"
+       width="1.2"
+       height="1.28"
+       y="-0.14000000000000001">
+      <feFlood
+         id="feFlood3855"
+         result="flood"
+         flood-color="rgb(0,0,0)"
+         flood-opacity="0.44999999999999996" />
+      <feComposite
+         id="feComposite3857"
+         result="composite1"
+         operator="in"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur3859"
+         result="blur"
+         stdDeviation="10" />
+      <feOffset
+         stdDeviation="3"
+         id="feOffset3861"
+         result="offset"
+         dy="10"
+         dx="0" />
+      <feComposite
+         id="feComposite3863"
+         result="composite2"
+         operator="over"
+         in2="offset"
+         in="SourceGraphic" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -199,15 +235,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142135"
-     inkscape:cx="171.19859"
-     inkscape:cy="419.57612"
+     inkscape:cx="421.18376"
+     inkscape:cy="291.33981"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1074"
-     inkscape:window-height="763"
-     inkscape:window-x="303"
-     inkscape:window-y="170"
+     inkscape:window-width="1918"
+     inkscape:window-height="1059"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
      showguides="false"
      inkscape:guide-bbox="true"
@@ -309,8 +345,17 @@
        sodipodi:cy="233.49998"
        sodipodi:rx="26.000002"
        sodipodi:ry="26.000002"
-       d="m 218.00002,233.49998 a 26.000002,26.000002 0 1 1 -52.00001,0 26.000002,26.000002 0 1 1 52.00001,0 z"
+       d="m 218.00002,233.49998 c 0,14.35941 -11.6406,26.00001 -26,26.00001 -14.35941,0 -26.00001,-11.6406 -26.00001,-26.00001 0,-14.3594 11.6406,-26 26.00001,-26 14.3594,0 26,11.6406 26,26 z"
        transform="translate(-129.00001,401.36218)" />
+    <rect
+       ry="2"
+       rx="2"
+       y="741.52014"
+       x="40"
+       height="224"
+       width="280"
+       id="rect3851"
+       style="fill:#fafafa;fill-opacity:1;stroke:none;filter:url(#filter3853)" />
   </g>
   <g
      inkscape:groupmode="layer"

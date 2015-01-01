@@ -19,6 +19,9 @@ author="Nathaniel Watson (nwatson.nz)">
 		<PropertyGroup name="Background">
 			<Property name="fillColor" type="Color" displayName="Default Background Color">#00bcd4ff</Property>
 		</PropertyGroup>
+		<PropertyGroup name="Background">
+			<Property name="neutralFillColor" type="Color" displayName="Neutral Background Color">#FAFAFAFF</Property>
+		</PropertyGroup>
 	</Properties>
 
 
@@ -189,7 +192,7 @@ author="Nathaniel Watson (nwatson.nz)">
 					p:maxX="$box.h">0,50</Property>
 			</PropertyGroup>
 			<PropertyGroup name="Background">
-				<Property name="fillColor" displayName="Sheet Color" type="Color">#FAFAFAFF</Property>
+				<Property name="fillColor" displayName="Sheet Color" type="Color"><E>$$neutralFillColor</E></Property>
 				<Property name="bgColor" displayName="Background Color" type="Color">#0000002B</Property>
 			</PropertyGroup>
 		</Properties>
@@ -340,6 +343,7 @@ author="Nathaniel Watson (nwatson.nz)">
 				<Property name="fillColor" displayName="Color" type="Color"><E>$$fillColor</E></Property>
 			</PropertyGroup>
 		</Properties>
+
 		<Behaviors>
 			<For ref="bg">
 				<EllipseFit>$box</EllipseFit>
@@ -382,4 +386,126 @@ author="Nathaniel Watson (nwatson.nz)">
 	<Shortcut displayName="Floating Action Button (Small)" icon="Icons/FloatingActionButtonSmall.png" to="FloatingActionButton">
 		<PropertyValue name="box">40,40</PropertyValue>
 	</Shortcut>
+
+	<Shape id="Card" displayName="Card" icon="Icons/Card.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">344,224</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Sheet Color" type="Color"><E>$$neutralFillColor</E></Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Actions>
+			<Action id="getSnappingGuide">
+				<Impl>
+					var b = this.getBounding();
+					return [
+						new SnappingData("Top", b.y, "HCenter", false, this.id),
+						new SnappingData("Bottom", b.y + b.height, "HCenter", false, this.id)
+					];
+				</Impl>
+			</Action>
+		</Actions>
+
+		<Behaviors>
+			<For ref="card">
+				<Box>$box</Box>
+				<Fill>$fillColor</Fill>
+				<ApplyFilter>true</ApplyFilter>
+			</For>
+		</Behaviors>
+		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+										xmlns="http://www.w3.org/2000/svg">
+
+			<defs>
+				<filter id="dropshadow">
+					<feFlood
+						flood-opacity="0.35"
+						flood-color="rgb(0,0,0)"
+						result="flood"
+						id="flood" />
+					<feComposite
+						in="flood"
+						in2="SourceGraphic"
+						operator="in"
+						result="composite1" />
+					<feGaussianBlur
+						stdDeviation="2"
+						result="blur" />
+					<feOffset
+						dx="0"
+						dy="1"
+						result="offset" />
+					<feComposite
+						in="SourceGraphic"
+						in2="offset"
+						operator="over" />
+				</filter>
+			</defs>
+			<rect id="card" rx="2px" ry="2px" p:filter="url(#dropshadow)" />
+		</p:Content>
+	</Shape>
+
+	<Shape id="Dialog" displayName="Dialog" icon="Icons/Dialog.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">280,224</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Sheet Color" type="Color"><E>$$neutralFillColor</E></Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Actions>
+			<Action id="getSnappingGuide">
+				<Impl>
+					var b = this.getBounding();
+					return [
+						new SnappingData("Top", b.y, "HCenter", false, this.id),
+						new SnappingData("Bottom", b.y + b.height, "HCenter", false, this.id)
+					];
+				</Impl>
+			</Action>
+		</Actions>
+
+		<Behaviors>
+			<For ref="card">
+				<Box>$box</Box>
+				<Fill>$fillColor</Fill>
+				<ApplyFilter>true</ApplyFilter>
+			</For>
+		</Behaviors>
+		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+										xmlns="http://www.w3.org/2000/svg">
+
+			<defs>
+				<filter id="dropshadow" height="1.28" y="-0.14">
+					<feFlood
+						flood-opacity="0.45"
+						flood-color="rgb(0,0,0)"
+						result="flood"
+						id="flood" />
+					<feComposite
+						in="flood"
+						in2="SourceGraphic"
+						operator="in"
+						result="composite1" />
+					<feGaussianBlur
+						stdDeviation="10"
+						result="blur" />
+					<feOffset
+						dx="0"
+						dy="10"
+						result="offset" />
+					<feComposite
+						in="SourceGraphic"
+						in2="offset"
+						operator="over" />
+				</filter>
+			</defs>
+			<rect id="card" rx="2px" ry="2px" p:filter="url(#dropshadow)" />
+		</p:Content>
+	</Shape>
 </Shapes>
