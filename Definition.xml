@@ -11,10 +11,13 @@ author="Nathaniel Watson (nwatson.nz)">
 		<PropertyGroup>
 			<Property name="iconBg" displayName="Icon background color" type="Color">#ffffff49</Property>
 		</PropertyGroup>
-
 		<PropertyGroup name="Text">
 			<Property name="defaultTextFont" type="Font" displayName="Default Font">"Roboto Medium", Roboto, Arial,sans-serif|500|normal|14px</Property>
 			<Property name="defaultTextColor" type="Color" displayName="Default Text Color">#212121ff</Property>
+		</PropertyGroup>
+		<PropertyGroup name="Line">
+			<Property name="strokeColor" type="Color" displayName="Default Line Color">#0000001F</Property>
+			<Property name="strokeStyle" type="StrokeStyle" displayName="Default Line Style">1|</Property>
 		</PropertyGroup>
 		<PropertyGroup name="Background">
 			<Property name="fillColor" type="Color" displayName="Default Background Color">#00bcd4ff</Property>
@@ -506,6 +509,161 @@ author="Nathaniel Watson (nwatson.nz)">
 				</filter>
 			</defs>
 			<rect id="card" rx="2px" ry="2px" p:filter="url(#dropshadow)" />
+		</p:Content>
+	</Shape>
+
+	<Shape id="Divider" displayName="Divider" icon="Icons/Divider.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension" p:lockHeight="true">360,10</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Line">
+				<Property name="strokeColor" displayName="Line Color" type="Color">
+				<E>$$strokeColor</E>
+				</Property>
+				<Property name="strokeStyle" displayName="Line Style" type="StrokeStyle">
+					<E>$$strokeStyle</E>
+				</Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="bgRect">
+				<Box>$box</Box>
+			</For>
+			<For ref="line">
+				<Transform>[translate(($strokeStyle.w % 2) / 2, ($strokeStyle.w % 2) / 2)]</Transform>
+				<D>[M(0, $box.h / 2), L($box.w, $box.h / 2)]</D>
+				<StrokeColor>$strokeColor</StrokeColor>
+				<StrokeStyle>$strokeStyle</StrokeStyle>
+			</For>
+		</Behaviors>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+			<rect id="bgRect" style="fill: #000000; fill-opacity: 0; stroke: none;" x="0" y="0" />
+			<path style="fill:none;" d="M 0,0 L 4,4 L 0,8 z" id="line" />
+		</p:Content>
+	</Shape>
+
+	<Shape id="menu" displayName="Menu List" icon="Icons/Menu">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">168,224</Property>
+				<Property name="scrollbar" displayName="Scrollbar" type="Bool">false</Property>
+				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Sheet Color" type="Color"><E>$$neutralFillColor</E></Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Text">
+				<Property name="contentText" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: new Alignment(0, 0), multi: true})"><![CDATA[MenuItem*
+MenuItem
+MenuItem]]></Property>
+				<Property name="textFont" displayName="Default Font" type="Font">"Roboto Light", Roboto,sans-serif|300|normal|16px</Property>
+				<Property name="textColor" displayName="Text Color" type="Color"><E>$$defaultTextColor</E></Property>
+				<Property name="textAlign" displayName="Text Alignment" type="Alignment">1,1</Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="bg">
+				<Bound>Bound.fromBox($box)</Bound>
+				<Fill>$fillColor</Fill>
+				<ApplyFilter>true</ApplyFilter>
+			</For>
+			<For ref="scrollbar">
+				<Visibility>$scrollbar</Visibility>
+				<Transform>[translate($box.w - 4, 0), scale(1, $box.h * 0.75)]</Transform>
+			</For>
+
+			<For ref="content">
+				<Bound>new Bound(0, 0, $box.w, $box.h)</Bound>
+			</For>
+
+			<For ref="list">
+				<DomContent>
+					<![CDATA[
+
+					var items = $contentText.value.split(/[\r\n]+/);
+
+					var specs = [];
+
+					for (var i = 0; i < items.length; i++) {
+						var text = items[i];
+
+						var css = CSS.fromString("padding: 14px 16px;");
+
+						if (text.match(/(.*)\*$/)) {
+							text = RegExp.$1;
+							css.set("background", "rgba(0, 0, 0, 0.05)");
+						}
+
+						if ($forceFont == "true") {
+							css.set("font-family", "Roboto, Roboto Light, sans-serif");
+							css.set("font-weight", "300");
+						}
+
+						specs.push({
+							_name: "li",
+							_uri: "http://www.w3.org/1999/xhtml",
+							_text: text,
+							style: css
+						});
+					}
+
+					Dom.newDOMFragment(specs);
+					]]>
+				</DomContent>
+
+				<Font>$textFont</Font>
+                <Color>$textColor</Color>
+			</For>
+		</Behaviors>
+
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+
+			<defs>
+				<filter id="dropshadow">
+					<feFlood
+						flood-opacity="0.35"
+						flood-color="rgb(0,0,0)"
+						result="flood"
+						id="flood" />
+					<feComposite
+						in="flood"
+						in2="SourceGraphic"
+						operator="in"
+						result="composite1" />
+					<feGaussianBlur
+						stdDeviation="2"
+						result="blur" />
+					<feOffset
+						dx="0"
+						dy="1"
+						result="offset" />
+					<feComposite
+						in="SourceGraphic"
+						in2="offset"
+						operator="over" />
+				</filter>
+			</defs>
+
+			<rect id="bg" rx="2px" ry="2px" p:filter="url(#dropshadow)" />
+			<rect id="scrollbar" width="4px" height="1px" style="fill:#000000;fill-opacity:0.12" />
+
+			<foreignObject id="content">
+				<div xmlns="http://www.w3.org/1999/xhtml" >
+					<ul id="list" style="list-style: none;
+							text-indent: 0;
+							padding: 8px 0;
+							font-family: Roboto, 'Roboto Medium', sans-serif;
+							font-size: 16px;
+							font-weight: 300;">
+				    	<!-- content -->
+					</ul>
+				</div>
+			</foreignObject>
 		</p:Content>
 	</Shape>
 </Shapes>
