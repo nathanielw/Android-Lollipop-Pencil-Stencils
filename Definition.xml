@@ -698,4 +698,43 @@ MenuItem]]></Property>
 			<rect id="fgRect" />
 		</p:Content>
 	</Shape>
+
+	<Shape id="Slider" displayName="Slider" icon="Icons/Slider.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension" p:lockHeight="true">360,10</Property>
+                <Property name="prog" displayName="Value" type="Handle" p:lockY="true" p:minX="0" p:maxX="$box.w">200,0</Property>
+                <Property name="disabled" displayName="Disabled" type="Bool">false</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="bgFillColor" displayName="Background Color" type="Color">#00000040</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Foreground">
+				<Property name="fgFillColor" displayName="Foreground Color" type="Color">#3c88efFF</Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="bgRect">
+				<Box>new Dimension($box.w - ($disabled.value ? $prog.x + 6 : $prog.x), 2)</Box>
+				<Transform>[translate($disabled.value ? $prog.x + 6 : $prog.x, 0)]</Transform>
+				<Fill>$bgFillColor</Fill>
+			</For>
+			<For ref="fgRect">
+				<Box>new Dimension($disabled.value ? $prog.x - 6 : $prog.x, 2)</Box>
+				<Fill>$disabled.value ? $bgFillColor : $fgFillColor</Fill>
+			</For>
+			<For ref="thumb">
+				<EllipseFit>new Dimension($disabled.value ? 8 : 12, $disabled.value ? 8 : 12)</EllipseFit>
+				<Fill>$disabled.value ? $bgFillColor : $fgFillColor</Fill>
+				<Transform>[translate($disabled.value ? $prog.x - 4 : $prog.x - 6, $disabled.value ? 1 : -1)]</Transform>
+			</For>
+		</Behaviors>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+			<rect id="bgRect" y="4px" />
+			<rect id="fgRect" y="4px" />
+			<ellipse id="thumb" />
+		</p:Content>
+	</Shape>
 </Shapes>
