@@ -666,4 +666,36 @@ MenuItem]]></Property>
 			</foreignObject>
 		</p:Content>
 	</Shape>
+
+	<Shape id="ProgressBar" displayName="Progress Bar" icon="Icons/ProgressBar.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension" p:lockHeight="true">360,4</Property>
+                <Property name="prog" displayName="Progress" type="Handle" p:lockY="true" p:minX="0" p:maxX="$box.w">200,0</Property>
+                <Property name="buffer" displayName="Buffer Progress" type="Handle" p:lockY="true" p:minX="0" p:maxX="$box.w">280,0</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="bgFillColor" displayName="Background Color" type="Color">#3c88ef4C</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Foreground">
+				<Property name="fgFillColor" displayName="Foreground Color" type="Color">#3c88efFF</Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="bgRect">
+				<Box>new Dimension($buffer.x, $box.h)</Box>
+				<Fill>$bgFillColor</Fill>
+			</For>
+			<For ref="fgRect">
+				<Box>new Dimension($prog.x, $box.h)</Box>
+				<Fill>$fgFillColor</Fill>
+			</For>
+		</Behaviors>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+			<rect id="bgRect" />
+			<rect id="fgRect" />
+		</p:Content>
+	</Shape>
 </Shapes>
