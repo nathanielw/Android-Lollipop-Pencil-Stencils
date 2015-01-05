@@ -737,4 +737,60 @@ MenuItem]]></Property>
 			<ellipse id="thumb" />
 		</p:Content>
 	</Shape>
+
+	<Shape id="Switch" displayName="Switch" icon="Icons/Switch.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension" p:lockHeight="true" p:lockWidth="true">36,14</Property>
+                <Property name="on" displayName="On" type="Bool">true</Property>
+                <Property name="disabled" displayName="Disabled" type="Bool">false</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Color" type="Color"><E>$$fillColor</E></Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="bgRect">
+				<Box>$box</Box>
+				<Fill>$disabled.value ? Color.fromString("#000000").hollowed(0.88) : $on.value ? $fillColor.hollowed(0.5) : Color.fromString("#000000").hollowed(0.74)</Fill>
+			</For>
+			<For ref="thumb">
+				<Fill>$disabled.value ? Color.fromString("#BDBDBD") : $on.value ? $fillColor : Color.fromString("#fafafa")</Fill>
+				<Transform>[translate($on.value ? $box.w - 10: 10,0)]</Transform>
+				<ApplyFilter>true</ApplyFilter>
+			</For>
+		</Behaviors>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+
+			<defs>
+				<filter id="dropshadow" height="1.5" y="-0.25" width="1.37" x="-0.2">
+					<feFlood
+						flood-opacity="0.4"
+						flood-color="rgb(0,0,0)"
+						result="flood"
+						id="flood" />
+					<feComposite
+						in="flood"
+						in2="SourceGraphic"
+						operator="in"
+						result="composite1" />
+					<feGaussianBlur
+						stdDeviation="1"
+						result="blur" />
+					<feOffset
+						dx="0"
+						dy="1.5"
+						result="offset" />
+					<feComposite
+						in="SourceGraphic"
+						in2="offset"
+						operator="over" />
+				</filter>
+			</defs>
+
+			<rect id="bgRect" rx="7px" ry="7px" />
+			<ellipse id="thumb" rx="10px" ry="10px" cy="7px" p:filter="url(#dropshadow)" />
+		</p:Content>
+	</Shape>
 </Shapes>
