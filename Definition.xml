@@ -793,4 +793,110 @@ MenuItem]]></Property>
 			<ellipse id="thumb" rx="10px" ry="10px" cy="7px" p:filter="url(#dropshadow)" />
 		</p:Content>
 	</Shape>
+
+
+	<Shape id="tooltip" displayName="Tooltip" icon="Icons/Tooltip.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">113,32</Property>
+				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Sheet Color" type="Color">#757575E6</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Text">
+				<Property name="contentText" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: new Alignment(0, 0), multi: false})"><![CDATA[Tooltip text]]></Property>
+				<Property name="textFont" displayName="Default Font" type="Font">"Roboto Medium", Roboto,sans-serif|500|normal|14px</Property>
+				<Property name="textColor" displayName="Text Color" type="Color">#FFFFFFFF</Property>
+				<Property name="textAlign" displayName="Text Alignment" type="Alignment">1,1</Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="bg">
+				<Bound>Bound.fromBox($box)</Bound>
+				<Fill>$fillColor</Fill>
+			</For>
+
+			<For ref="content">
+				<Bound>new Bound(0, 0, $box.w, $box.h)</Bound>
+			</For>
+
+			<For ref="list">
+				<DomContent>
+					<![CDATA[
+
+					var specs = [];
+
+					var text = $contentText.value;
+
+					var css = new CSS()
+
+					css.set("padding", "8px 16px");
+					css.set("display", "table-cell");
+					css.set("height",($box.h - 8*2) + "px");
+					css.set("width",($box.w - 16*2) + "px");
+
+					switch (parseInt($textAlign.h, 10)) {
+						case 0:
+							css.set("text-align", "left");
+							break;
+						case 1:
+							css.set("text-align", "center");
+							break;
+						case 2:
+							css.set("text-align", "right");
+							break;
+					}
+
+					switch (parseInt($textAlign.v, 10)) {
+						case 0:
+							css.set("vertical-align", "top");
+							break;
+						case 1:
+							css.set("vertical-align", "middle");
+							break;
+						case 2:
+							css.set("vertical-align", "bottom");
+							break;
+					}
+
+					if ($forceFont == "true") {
+						css.set("font-family", "Roboto, Roboto Medium, sans-serif");
+						css.set("font-weight", "500");
+					}
+
+					specs.push({
+						_name: "div",
+						_uri: "http://www.w3.org/1999/xhtml",
+						_text: text,
+						style: css
+					});
+
+					Dom.newDOMFragment(specs);
+					]]>
+				</DomContent>
+
+				<Font>$textFont</Font>
+                <Color>$textColor</Color>
+			</For>
+		</Behaviors>
+
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+
+
+			<rect id="bg" rx="2px" ry="2px" />
+
+			<foreignObject id="content">
+				<div xmlns="http://www.w3.org/1999/xhtml" >
+					<div id="list">
+				    	<!-- content -->
+					</div>
+				</div>
+			</foreignObject>
+		</p:Content>
+	</Shape>
+
 </Shapes>
