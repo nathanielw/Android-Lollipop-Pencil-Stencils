@@ -821,6 +821,67 @@ MenuItem]]></Property>
 		</p:Content>
 	</Shape>
 
+	<Shape id="Checkbox" displayName="Checkbox" icon="Icons/Checkbox.png">
+		<Properties>
+			<PropertyGroup>
+                <Property name="on" displayName="On" type="Bool">true</Property>
+                <Property name="disabled" displayName="Disabled" type="Bool">false</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Color" type="Color"><E>$$fillColor</E></Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="on">
+				<Visibility>$on</Visibility>
+				<Fill>$disabled.value ? Color.fromString("#000000").hollowed(0.74) : $fillColor</Fill>
+			</For>
+			<For ref="off">
+				<Visibility>$on.negative()</Visibility>
+				<StrokeColor>$disabled.value ? Color.fromString("#000000").hollowed(0.74) : Color.fromString("#000000").hollowed(0.54)</StrokeColor>
+			</For>
+		</Behaviors>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+			<path
+				id="on"
+				d="M 2,0 C 0.892,0 0,0.892 0,2 l 0,14 c 0,1.108 0.892,2 2,2 l 14,0 c 1.108,0 2,-0.892 2,-2 L 18,2 C 18,0.892 17.108,0 16,0 L 2,0 z m 12.5,3.90625 1.1875,1.1875 -8.125,8.125 L 6.96875,13.8125 6.375,13.21875 2.28125,9.125 3.46875,7.90625 6.96875,11.4375 14.5,3.90625 z" />
+			<rect
+				id="off"
+				rx="2px" ry="2px" width="16px" height="16px" x="1px" y="1px"
+				style="fill:#000000;fill-opacity:0;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+		</p:Content>
+	</Shape>
+
+	<Shape id="RadioButton" displayName="Radio Button" icon="Icons/RadioButton.png">
+		<Properties>
+			<PropertyGroup>
+                <Property name="on" displayName="On" type="Bool">true</Property>
+                <Property name="disabled" displayName="Disabled" type="Bool">false</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Color" type="Color"><E>$$fillColor</E></Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="inner">
+				<Visibility>$on</Visibility>
+				<Fill>$disabled.value ? Color.fromString("#000000").hollowed(0.74) : $fillColor</Fill>
+			</For>
+			<For ref="outer">
+				<StrokeColor>$disabled.value ? Color.fromString("#000000").hollowed(0.74) : $on.value ? $fillColor : Color.fromString("#000000").hollowed(0.54)</StrokeColor>
+			</For>
+		</Behaviors>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+			<ellipse id="inner" 
+				rx="5px" ry="5px" cx="10px" cy="10px" />
+			<ellipse id="outer" 
+				rx="9px" ry="9px" cx="10px" cy="10px"
+				style="fill:#000000;fill-opacity:0;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+		</p:Content>
+	</Shape>
+
 	<Shape id="Tooltip" displayName="Tooltip" icon="Icons/Tooltip.png">
 		<Properties>
 			<PropertyGroup>
@@ -829,7 +890,7 @@ MenuItem]]></Property>
 			</PropertyGroup>
 
 			<PropertyGroup name="Background">
-				<Property name="fillColor" displayName="Sheet Color" type="Color">#757575E6</Property>
+				<Property name="fillColor" displayName="Background Color" type="Color">#757575E6</Property>
 			</PropertyGroup>
 
 			<PropertyGroup name="Text">
@@ -914,7 +975,7 @@ MenuItem]]></Property>
 
 
 			<PropertyGroup name="Background">
-				<Property name="fillColor" displayName="Sheet Color" type="Color">#323232FF</Property>
+				<Property name="fillColor" displayName="Background Color" type="Color">#323232FF</Property>
 			</PropertyGroup>
 
 			<PropertyGroup name="Text">
