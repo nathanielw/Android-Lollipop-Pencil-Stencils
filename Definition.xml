@@ -1064,4 +1064,125 @@ MenuItem]]></Property>
 		<PropertyValue name="toast">true</PropertyValue>
 	</Shortcut>
 
+	<Shape id="TextField" displayName="Text Field" icon="Icons/TextField.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">113,48</Property>
+				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
+				<Property name="focused" displayName="Focused" type="Bool">false</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Line">
+				<Property name="focusColor" displayName="Focused Color" type="Color"><E>$$fillColor</E></Property>
+				<Property name="fillColor" displayName="Normal Color" type="Color">#C8C8C8FF</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Content">
+				<Property name="contentText" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: new Bound(0, 22, $box.w, 20), font: $textFont, align: new Alignment(0, 0), multi: false})"><![CDATA[Content text]]></Property>
+				<Property name="textFont" displayName="Default Font" type="Font">Roboto,sans-serif|500|normal|16px</Property>
+				<Property name="textColor" displayName="Text Color" type="Color"><E>$$defaultTextColor</E></Property>
+				<Property name="textAlign" displayName="Text Alignment" type="Alignment">0,2</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Label">
+				<Property name="labelText" displayName="Label Text" type="PlainText" p:editInfo="({targetName: 'fakeLabel', bound: new Bound(0, 0, $box.w, 20), font: $textFont, align: new Alignment(0, 0), multi: false})"><![CDATA[Label text]]></Property>
+				<Property name="labelFont" displayName="Default Font" type="Font">Roboto, sans-serif|500|normal|12px</Property>
+				<Property name="labelColor" displayName="Text Color" type="Color">#757575FF</Property>
+				<Property name="labelAlign" displayName="Text Alignment" type="Alignment">0,0</Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="content">
+				<Bound>new Bound(0, 0, $box.w, $box.h)</Bound>
+			</For>
+
+			<For ref="text">
+				<DomContent>
+					<![CDATA[
+
+					var contentText = $contentText.value;
+					var labelText = $labelText.value;
+
+					var specs = [];
+
+					var labelCss = new CSS();
+					var contentCss = new CSS();
+
+					labelCss.set("color", $labelColor.toRGBAString());
+					labelCss.set("font", $labelFont.toCSSFontString());
+					collection.setCssTextAlignment(labelCss, $labelAlign.h, $labelAlign.v);
+
+					contentCss.set("padding", "8px 0px");
+					contentCss.set("display", "table-cell");
+					contentCss.set("height", ($box.h - 8*2) - $labelFont.getPixelHeight() + "px");
+					contentCss.set("width", $box.w + "px");
+					contentCss.set("font", $textFont.toCSSFontString());
+					contentCss.set("color", $textColor.toRGBAString());
+					collection.setCssTextAlignment(contentCss, $textAlign.h, $textAlign.v);
+
+					if ($forceFont == "true") {
+						contentCss.set("font-family", "Roboto, sans-serif");
+						contentCss.set("font-weight", "500");
+						labelCss.set("font-family", "Roboto, sans-serif");
+						labelCss.set("font-weight", "500");
+					}
+
+					if (contentText.trim().length === 0 && !$focused.value) {
+						contentText = labelText;
+						labelCss.set("visibility", "hidden");
+						contentCss.set("color", $textColor.hollowed(0.74).toRGBAString());
+					} else if (labelText.trim().length === 0) {
+						labelText = "Label";
+						labelCss.set("visibility", "hidden");
+					}
+
+					specs.push({
+						_name: "div",
+						_uri: "http://www.w3.org/1999/xhtml",
+						_text: labelText,
+						style: labelCss
+					});
+					
+					specs.push({
+						_name: "div",
+						_uri: "http://www.w3.org/1999/xhtml",
+						_text: contentText,
+						style: contentCss
+					});
+
+					Dom.newDOMFragment(specs);
+					]]>
+				</DomContent>
+			</For>
+
+			<For ref="fakeLabel">
+				<Box>new Dimension($box.w, $labelFont.getPixelHeight())</Box>
+			</For>
+
+			<For ref="line">
+				<D>[M(0, $box.h), L($box.w, $box.h)]</D>
+				<StrokeColor>$focused.value ? $focusColor : $fillColor</StrokeColor>
+				<StrokeStyle>StrokeStyle.fromString($focused.value ? "2|" : "0.5|")</StrokeStyle>
+			</For>
+
+		</Behaviors>
+
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+
+			<foreignObject id="content">
+				<div xmlns="http://www.w3.org/1999/xhtml" >
+					<div id="text">
+				    	<!-- content -->
+					</div>
+				</div>
+			</foreignObject>
+
+			<rect id="fakeLabel" style="fill:#000000;fill-opacity:0;" />
+
+			<path  d="M 0,0 L 4,4 L 0,8 z" id="line" />
+		</p:Content>
+	</Shape>
+
+
 </Shapes>
