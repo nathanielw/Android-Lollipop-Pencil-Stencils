@@ -1070,6 +1070,7 @@ MenuItem]]></Property>
 				<Property name="box" type="Dimension">113,48</Property>
 				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
 				<Property name="focused" displayName="Focused" type="Bool">false</Property>
+				<Property name="disabled" displayName="Disabled" type="Bool">false</Property>
 			</PropertyGroup>
 
 			<PropertyGroup name="Line">
@@ -1104,12 +1105,14 @@ MenuItem]]></Property>
 					var contentText = $contentText.value;
 					var labelText = $labelText.value;
 
+					var disabledColor = $textColor.hollowed(0.74).toRGBAString();
+
 					var specs = [];
 
 					var labelCss = new CSS();
 					var contentCss = new CSS();
 
-					labelCss.set("color", $labelColor.toRGBAString());
+					labelCss.set("color", $disabled.value ? disabledColor : $labelColor.toRGBAString());
 					labelCss.set("font", $labelFont.toCSSFontString());
 					collection.setCssTextAlignment(labelCss, $labelAlign.h, $labelAlign.v);
 
@@ -1118,7 +1121,7 @@ MenuItem]]></Property>
 					contentCss.set("height", ($box.h - 8*2) - $labelFont.getPixelHeight() + "px");
 					contentCss.set("width", $box.w + "px");
 					contentCss.set("font", $textFont.toCSSFontString());
-					contentCss.set("color", $textColor.toRGBAString());
+					contentCss.set("color", $disabled.value ? disabledColor : $textColor.toRGBAString());
 					collection.setCssTextAlignment(contentCss, $textAlign.h, $textAlign.v);
 
 					if ($forceFont == "true") {
@@ -1131,7 +1134,7 @@ MenuItem]]></Property>
 					if (contentText.trim().length === 0 && !$focused.value) {
 						contentText = labelText;
 						labelCss.set("visibility", "hidden");
-						contentCss.set("color", $textColor.hollowed(0.74).toRGBAString());
+						contentCss.set("color", disabledColor);
 					} else if (labelText.trim().length === 0) {
 						labelText = "Label";
 						labelCss.set("visibility", "hidden");
@@ -1162,10 +1165,9 @@ MenuItem]]></Property>
 
 			<For ref="line">
 				<D>[M(0, $box.h), L($box.w, $box.h)]</D>
-				<StrokeColor>$focused.value ? $focusColor : $fillColor</StrokeColor>
-				<StrokeStyle>StrokeStyle.fromString($focused.value ? "2|" : "0.5|")</StrokeStyle>
+				<StrokeColor>($focused.value &amp;&amp; !$disabled.value) ? $focusColor : $fillColor</StrokeColor>
+				<StrokeStyle>StrokeStyle.fromString($disabled.value ? "1|1,3" : ($focused.value ? "2|" : "1|"))</StrokeStyle>
 			</For>
-
 		</Behaviors>
 
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
