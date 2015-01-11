@@ -284,19 +284,22 @@ author="Nathaniel Watson (nwatson.nz)">
 			<PropertyGroup>
 				<Property name="box" type="Dimension">96,36</Property>
 				<Property name="shadow" displayName="Shadow" type="Bool">true</Property>
+				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
 			</PropertyGroup>
 			<PropertyGroup name="Background">
 				<Property name="fillColor" displayName="Color" type="Color">#FFFFFF</Property>
 			</PropertyGroup>
 
 			<PropertyGroup name="Text">
-				<Property name="label" displayName="Label" 
-					type="PlainText">BUTTON</Property>
+				<Property name="label" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: $textAlign, multi: false})"><![CDATA[BUTTON]]></Property>
+
 				<Property name="textColor" displayName="Color"
 					type="Color"><E>$$defaultTextColor</E></Property>
 				<Property name="textFont"
 					displayName="Font"
 					type="Font"><E>$$defaultTextFont</E></Property>
+
+				<Property name="textAlign" displayName="Text Alignment" type="Alignment">1,1</Property>
 			</PropertyGroup>
 		</Properties>
 		<Behaviors>
@@ -306,18 +309,48 @@ author="Nathaniel Watson (nwatson.nz)">
 				<ApplyFilter>$shadow</ApplyFilter>
 			</For>
 
+			<For ref="content">
+				<Bound>new Bound(0, 0, $box.w, $box.h)</Bound>
+			</For>
 
 			<For ref="text">
-				<TextContent>$label</TextContent>
-				<Font>$textFont</Font>
-				<Fill>$textColor</Fill>
-				<Color>$textColor</Color>
+				<DomContent>
+					<![CDATA[
 
-				<BoxFit>
-					<Arg>new Bound(0, 0, $box.w, $box.h)</Arg>
-					<Arg>new Alignment(1, 1)</Arg>
-				</BoxFit>
+					var specs = [];
+
+					var text = $label.value;
+
+					var css = new CSS();
+
+					css.set("display", "table-cell");
+					css.set("height", $box.h + "px");
+					css.set("width", $box.w + "px");
+
+					collection.setCssTextAlignment(css, $textAlign.h, $textAlign.v);
+
+					if ($forceFont.value) {
+						css.set("font-family", "Roboto, sans-serif");
+						css.set("font-weight", "500");
+					}
+
+					specs.push({
+						_name: "div",
+						_uri: "http://www.w3.org/1999/xhtml",
+						_text: text,
+						style: css
+					});
+
+					Dom.newDOMFragment(specs);
+					]]>
+				</DomContent>
+
+				<Font>$textFont</Font>
+                <Color>$textColor</Color>
 			</For>
+
+
+
 		</Behaviors>
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
 
@@ -348,7 +381,14 @@ author="Nathaniel Watson (nwatson.nz)">
 			</defs>
 
 			<rect id="bg" rx="2px" ry="2px" p:filter="url(#dropshadow)" />
-			<text id="text" />
+
+			<foreignObject id="content">
+				<div xmlns="http://www.w3.org/1999/xhtml" >
+					<div id="text">
+				    	<!-- content -->
+					</div>
+				</div>
+			</foreignObject>
 		</p:Content>
 	</Shape>
 
