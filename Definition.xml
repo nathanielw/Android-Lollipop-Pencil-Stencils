@@ -702,11 +702,11 @@ MenuItem]]></Property>
                 <Property name="buffer" displayName="Buffer Progress" type="Handle" p:lockY="true" p:minX="0" p:maxX="$box.w">280,0</Property>
 			</PropertyGroup>
 			<PropertyGroup name="Background">
-				<Property name="bgFillColor" displayName="Background Color" type="Color">#3c88ef4C</Property>
+				<Property name="bgFillColor" displayName="Background Color" type="Color"><E>$$fillColor.hollowed(0.7)</E></Property>
 			</PropertyGroup>
 
 			<PropertyGroup name="Foreground">
-				<Property name="fgFillColor" displayName="Foreground Color" type="Color">#3c88efFF</Property>
+				<Property name="fgFillColor" displayName="Foreground Color" type="Color"><E>$$fillColor</E></Property>
 			</PropertyGroup>
 		</Properties>
 
@@ -738,7 +738,7 @@ MenuItem]]></Property>
 			</PropertyGroup>
 
 			<PropertyGroup name="Foreground">
-				<Property name="fgFillColor" displayName="Foreground Color" type="Color">#3c88efFF</Property>
+				<Property name="fgFillColor" displayName="Foreground Color" type="Color"><E>$$fillColor</E></Property>
 			</PropertyGroup>
 		</Properties>
 
