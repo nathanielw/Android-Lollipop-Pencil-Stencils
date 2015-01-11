@@ -1186,5 +1186,100 @@ MenuItem]]></Property>
 		</p:Content>
 	</Shape>
 
+	<Shape id="tabs" displayName="Tabs" icon="Icons/Tabs.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">360,48</Property>
+				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
+				<Property name="highlightText" displayName="Text color same as tab indicator" type="Bool">true</Property>
+			</PropertyGroup>
 
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Background Color" type="Color"><E>$$fillColor</E></Property>
+			</PropertyGroup>			
+
+			<PropertyGroup name="Highlight">
+				<Property name="highlightColor" displayName="Highlight Color" type="Color">#FFFFFFFF</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Text">
+				<Property name="contentText" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: $textAlign, multi: true})"><![CDATA[ITEM 1*|ITEM 2|ITEM 3]]></Property>
+				<Property name="textFont" displayName="Default Font" type="Font">Roboto,sans-serif|500|normal|14px</Property>
+				<Property name="textColor" displayName="Text Color" type="Color">#FFFFFF99</Property>
+				<Property name="textAlign" displayName="Text Alignment" type="Alignment">1,1</Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="bg">
+				<Bound>Bound.fromBox($box)</Bound>
+				<Fill>$fillColor</Fill>
+			</For>
+
+			<For ref="content">
+				<Bound>new Bound(0, 0, $box.w, $box.h)</Bound>
+			</For>
+
+			<For ref="list">
+				<DomContent>
+					<![CDATA[
+
+					var items = $contentText.value.split(/\|+/);
+
+					var specs = [];
+
+					for (var i = 0; i < items.length; i++) {
+						var text = items[i];
+
+						var css = new CSS();
+						css.set("color", $textColor.toRGBAString());
+						css.set("background", $fillColor.toRGBAString());
+						css.set("display", "table-cell");
+						css.set("margin", "0");
+						css.set("height", $box.h + "px");
+						css.set("width", $box.w + "px");
+
+						collection.setCssTextAlignment(css, $textAlign.h, $textAlign.v);
+
+						if (text.match(/(.*)\*$/)) {
+							text = RegExp.$1;
+							css.set("box-shadow", "inset 0 -2px 0 0 " + $highlightColor.toRGBAString());
+							css.set("color", $highlightText.value ? $highlightColor.toRGBAString() : $textColor.toRGBString());
+						}
+
+						if ($forceFont == "true") {
+							css.set("font-family", "Roboto, sans-serif");
+							css.set("font-weight", "500");
+						}
+
+						specs.push({
+							_name: "li",
+							_uri: "http://www.w3.org/1999/xhtml",
+							_text: text,
+							style: css
+						});
+					}
+
+					Dom.newDOMFragment(specs);
+					]]>
+				</DomContent>
+
+				<Font>$textFont</Font>
+			</For>
+		</Behaviors>
+
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+			<rect id="bg" />
+
+			<foreignObject id="content">
+				<div xmlns="http://www.w3.org/1999/xhtml" >
+					<ul id="list" style="list-style: none;
+							text-indent: 0;
+							padding: 0 0;">
+				    	<!-- content -->
+					</ul>
+				</div>
+			</foreignObject>
+		</p:Content>
+	</Shape>
 </Shapes>
