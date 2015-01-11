@@ -271,14 +271,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.359375"
-     inkscape:cx="591.39503"
-     inkscape:cy="380.23455"
+     inkscape:zoom="0.48061164"
+     inkscape:cx="1014.5528"
+     inkscape:cy="141.17501"
      inkscape:document-units="px"
-     inkscape:current-layer="layer9"
+     inkscape:current-layer="layer6"
      showgrid="false"
-     inkscape:window-width="1893"
-     inkscape:window-height="1059"
+     inkscape:window-width="1918"
+     inkscape:window-height="698"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -325,7 +325,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -359,7 +359,10 @@
        x="0"
        y="436.36218"
        rx="0"
-       ry="0" />
+       ry="0"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/Icons/ActionBar.png"
+       inkscape:export-xdpi="89.999908"
+       inkscape:export-ydpi="89.999908" />
     <rect
        style="fill:url(#linearGradient3885);fill-opacity:1;stroke:none"
        id="rect3101"
@@ -367,8 +370,9 @@
        height="6"
        x="0"
        y="492.36218"
-       inkscape:export-xdpi="180"
-       inkscape:export-ydpi="180" />
+       inkscape:export-xdpi="89.999908"
+       inkscape:export-ydpi="89.999908"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/Icons/ActionBar.png" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -376,7 +380,10 @@
      inkscape:label="Switch">
     <g
        id="g3867"
-       transform="translate(1000.6256,-44.993436)">
+       transform="translate(1000.6256,-44.993436)"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/icons/Switch.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          ry="7"
          rx="7"
@@ -476,7 +483,10 @@
        style="fill:#00bcd4;fill-opacity:1;stroke:none"
        d="m 237.96479,130.53017 c -1.108,0 -2,0.892 -2,2 l 0,14 c 0,1.108 0.892,2 2,2 l 14,0 c 1.108,0 2,-0.892 2,-2 l 0,-14 c 0,-1.108 -0.892,-2 -2,-2 l -14,0 z m 12.5,3.90625 1.1875,1.1875 -8.125,8.125 -0.59375,0.59375 -0.59375,-0.59375 -4.09375,-4.09375 1.1875,-1.21875 3.5,3.53125 7.53125,-7.53125 z"
        id="rect3097"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/Icons/Checkbox.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:0.54117647;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3874"
@@ -499,7 +509,10 @@
     <g
        style="display:inline"
        id="g3966"
-       transform="translate(492.01365,-93.48841)">
+       transform="translate(492.01365,-93.48841)"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/icons/RadioButton.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <path
          transform="matrix(1.0030156,0,0,1.0030156,1.364186,31.458157)"
          d="m -238.69324,234.8522 c 0,4.95562 -4.01732,8.97294 -8.97294,8.97294 -4.95562,0 -8.97294,-4.01732 -8.97294,-8.97294 0,-4.95562 4.01732,-8.97294 8.97294,-8.97294 4.95562,0 8.97294,4.01732 8.97294,8.97294 z"
@@ -581,7 +594,10 @@
        x="38.000004"
        y="530.36218"
        rx="2"
-       ry="2" />
+       ry="2"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/Icons/Button.png"
+       inkscape:export-xdpi="41.669998"
+       inkscape:export-ydpi="41.669998" />
     <path
        sodipodi:type="arc"
        style="display:inline;fill:#00bcd4;fill-opacity:1;stroke:none;filter:url(#filter6130)"
@@ -591,7 +607,10 @@
        sodipodi:rx="26.000002"
        sodipodi:ry="26.000002"
        d="m 218.00002,233.49998 a 26.000002,26.000002 0 1 1 -52.00001,0 26.000002,26.000002 0 1 1 52.00001,0 z"
-       transform="translate(-129.00001,-11)" />
+       transform="translate(-129.00001,-11)"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/icons/FloatingActionButtonSmall.png"
+       inkscape:export-xdpi="72.115379"
+       inkscape:export-ydpi="72.115379" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -607,9 +626,15 @@
        height="24"
        width="360"
        id="rect3913"
-       style="fill:#000000;fill-opacity:0.14509804;stroke:none;display:inline;filter:url(#filter3047)" />
+       style="fill:#000000;fill-opacity:0.14509804;stroke:none;display:inline;filter:url(#filter3047)"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/Icons/NotificationBar.png"
+       inkscape:export-xdpi="89.999908"
+       inkscape:export-ydpi="89.999908" />
     <g
-       id="g3955">
+       id="g3955"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/Icons/NotificationBar.png"
+       inkscape:export-xdpi="89.999908"
+       inkscape:export-ydpi="89.999908">
       <g
          transform="matrix(1.0357736,0,0,1.0357736,-390.31211,639.18326)"
          id="g3957">
@@ -695,6 +720,21 @@
        transform="translate(0,640)"
        rx="14.196428"
        ry="8" />
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Roboto;-inkscape-font-specification:Roboto Medium"
+       x="62.836559"
+       y="778.58899"
+       id="text3867"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/Icons/ButtonFlat.png"
+       inkscape:export-xdpi="41.669998"
+       inkscape:export-ydpi="41.669998"><tspan
+         sodipodi:role="line"
+         id="tspan3869"
+         x="62.836559"
+         y="778.58899"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr;text-anchor:start;font-family:Roboto;-inkscape-font-specification:Roboto Medium;fill:#ffffff">BUTTON</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -707,10 +747,16 @@
        width="360"
        height="48"
        x="0"
-       y="592" />
+       y="592"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/Icons/SoftKeys.png"
+       inkscape:export-xdpi="35.625"
+       inkscape:export-ydpi="35.625" />
     <g
        id="g3857"
-       transform="translate(-380.41663,0)">
+       transform="translate(-380.41663,0)"
+       inkscape:export-filename="/mnt/sharedntfs/Programming/Pencil Android Lollipop/Icons/SoftKeys.png"
+       inkscape:export-xdpi="35.625"
+       inkscape:export-ydpi="35.625">
       <rect
          y="609"
          x="653"
