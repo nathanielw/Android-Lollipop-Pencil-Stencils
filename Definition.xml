@@ -611,7 +611,7 @@ author="Nathaniel Watson (nwatson.nz)">
 		</p:Content>
 	</Shape>
 
-	<Shape id="menu" displayName="Menu List" icon="Icons/Menu">
+	<Shape id="menu" displayName="Menu List" icon="Icons/Menu.png">
 		<Properties>
 			<PropertyGroup>
 				<Property name="box" type="Dimension">168,224</Property>
