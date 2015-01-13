@@ -5,7 +5,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
 id="nz.nwatson.AndroidLollipop"
 displayName="Android Lollipop"
 description="UI components from Android 5.0 (Lollipop)"
-author="Nathaniel Watson (nwatson.nz)">
+author="Nathaniel Watson (nwatson.nz)"
+url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 
 	<Properties>
 		<PropertyGroup>
@@ -62,7 +63,7 @@ author="Nathaniel Watson (nwatson.nz)">
 					break;
 			}
 		}
-		
+
 		]]>
 	</Script>
 
@@ -124,7 +125,7 @@ author="Nathaniel Watson (nwatson.nz)">
 				<Property name="fillColor" displayName="Background color" type="Color">#00000025</Property>
 			</PropertyGroup>
 		</Properties>
-		
+
 		<Behaviors>
 			<For ref="bg">
 				<Box>$box</Box>
@@ -215,7 +216,7 @@ author="Nathaniel Watson (nwatson.nz)">
 			<PropertyGroup>
 				<Property name="box" type="Dimension">360,224</Property>
 
-				<Property name="height" displayName="Height" 
+				<Property name="height" displayName="Height"
 					type="Handle"
 					p:lockX="true"
 					p:minX="0"
@@ -914,9 +915,9 @@ MenuItem]]></Property>
 			</For>
 		</Behaviors>
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
-			<ellipse id="inner" 
+			<ellipse id="inner"
 				rx="5px" ry="5px" cx="10px" cy="10px" />
-			<ellipse id="outer" 
+			<ellipse id="outer"
 				rx="9px" ry="9px" cx="10px" cy="10px"
 				style="fill:#000000;fill-opacity:0;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
 		</p:Content>
@@ -1186,7 +1187,7 @@ MenuItem]]></Property>
 						_text: labelText,
 						style: labelCss
 					});
-					
+
 					specs.push({
 						_name: "div",
 						_uri: "http://www.w3.org/1999/xhtml",
@@ -1236,7 +1237,7 @@ MenuItem]]></Property>
 
 			<PropertyGroup name="Background">
 				<Property name="fillColor" displayName="Background Color" type="Color"><E>$$fillColor</E></Property>
-			</PropertyGroup>			
+			</PropertyGroup>
 
 			<PropertyGroup name="Highlight">
 				<Property name="highlightColor" displayName="Highlight Color" type="Color">#FFFFFFFF</Property>
