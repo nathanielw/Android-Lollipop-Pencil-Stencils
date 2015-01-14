@@ -2,7 +2,7 @@
 
 Collection of common Android Lollipop UI elements for Pencil ([pencil.evolus.vn](http://pencil.evolus.vn/)).
 
-See #2 for a list of included components - requests & contributions welcome!
+See [#2](/../../issues/2) for a list of included components - requests & contributions welcome!
 
 ## Installation
 1. Either clone this repo or [download it as a .zip](https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils/archive/master.zip) and extract the contents
