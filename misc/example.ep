@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<Document xmlns="http://www.evolus.vn/Namespace/Pencil"><Properties/><Pages><Page><Properties><Property name="name">Untitled Page</Property><Property name="id">1421451965586_9078</Property><Property name="width">416</Property><Property name="height">818.6796875</Property><Property name="dimBackground"/><Property name="transparentBackground">true</Property><Property name="backgroundColor">#FFFFFFFF</Property><Property name="background">transparent</Property></Properties><Content><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="Evolus.Common:RoundedRect" id="41f2dbe65fae4f52a412e3ff09642144" transform="matrix(1,0,0,1,21,50)"><p:metadata><p:property name="box"><![CDATA[374,684]]></p:property><p:property name="withBlur"><![CDATA[false]]></p:property><p:property name="radius"><![CDATA[0,0]]></p:property><p:property name="textPadding"><![CDATA[0,85.5]]></p:property><p:property name="fillColor"><![CDATA[#F0F0F0FF]]></p:property><p:property name="strokeColor"><![CDATA[#1B3280FF]]></p:property><p:property name="strokeStyle"><![CDATA[0|]]></p:property><p:property name="textContent"><![CDATA[
+                ]]></p:property><p:property name="textFont"><![CDATA["Liberation Sans",Arial,sans-serif|normal|normal|13px|none]]></p:property><p:property name="textColor"><![CDATA[#000000FF]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+            <defs>
+                <rect width="374" height="684" rx="0" ry="0" x="0" y="0" style="stroke-width: 0; fill: rgb(240, 240, 240); fill-opacity: 1; stroke: rgb(27, 50, 128); stroke-opacity: 1;" p:name="rrRect" id="efbd334a5d824c7db8d3e18940fcd5b2" transform="translate(0,0)"/>
+                <filter height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198" p:name="shadingFilter" id="0e5b9cb48aae455d9fb2684a4359f648">
+                    <feGaussianBlur stdDeviation="1" in="SourceAlpha"/>
+                </filter>
+            </defs>
+            <use xlink:href="#efbd334a5d824c7db8d3e18940fcd5b2" xmlns:xlink="http://www.w3.org/1999/xlink" transform="translate(2, 2)" p:filter="url(#0e5b9cb48aae455d9fb2684a4359f648)" style="opacity: 0.5; visibility: hidden; display: none;" p:heavy="true" p:name="bgCopy" id="c3627f1ad2d3405c862c5de89158ec09"/>
+            <use xlink:href="#efbd334a5d824c7db8d3e18940fcd5b2" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+            <foreignObject x="85.5" y="342" width="203" height="0" p:name="text" id="303c9853d09445e281a9606d9411753e" style="font-family: &quot;Liberation Sans&quot;,Arial,sans-serif; font-size: 13px; font-weight: normal; font-style: normal; text-decoration: none; fill: rgb(0, 0, 0); fill-opacity: 1; color: rgb(0, 0, 0); opacity: 1; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml">
+                </div></foreignObject>
+        </g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Card" id="3bcbd80c8954473e9c1676f1a92189cb" transform="matrix(1,0,0,1,35,210)"><p:metadata><p:property name="box"><![CDATA[345,277]]></p:property><p:property name="fillColor"><![CDATA[#FAFAFAFF]]></p:property></p:metadata>
+
+			<defs>
+				<filter p:name="dropshadow" id="5e250c9bd54c4cd4b66208c76389faec">
+					<feFlood flood-opacity="0.35" flood-color="rgb(0,0,0)" result="flood" p:name="flood" id="d1e1c9e6182d45aca443f895b5811ebc"/>
+					<feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+					<feGaussianBlur stdDeviation="2" result="blur"/>
+					<feOffset dx="0" dy="1" result="offset"/>
+					<feComposite in="SourceGraphic" in2="offset" operator="over"/>
+				</filter>
+			</defs>
+			<rect rx="2px" ry="2px" p:filter="url(#5e250c9bd54c4cd4b66208c76389faec)" p:name="card" id="8dfb0443c5924ca48ea09b71085541a0" width="345" height="277" style="fill: rgb(250, 250, 250); fill-opacity: 1;" filter="url(#5e250c9bd54c4cd4b66208c76389faec)"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Phone" id="a69fc5f43dec4a16b1d348a2360c5666" transform="matrix(1,0,0,1,10,10)"><p:metadata><p:property name="fillColor"><![CDATA[#000000FF]]></p:property></p:metadata>
+
+			<path d="M 196.4687,0.00219 C 140.2618,-0.10611 84.5791,3.79919 30.1563,12.03339 16.1048,14.20359 10e-5,26.23049 0,42.93969 l 0,712.8437 c 1e-4,16.7092 16.1048,28.7359 30.1563,30.9062 112.0799,15.8578 229.0941,16.1103 335.6874,0 14.0514,-2.1703 30.1563,-14.197 30.1563,-30.9062 l 0,-712.8437 c 0,-16.7092 -16.105,-28.7361 -30.1563,-30.9063 -56.4368,-7.8015 -113.168,-11.923 -169.375,-12.0312 z m -178.4687,68 360,0 0,640 -360,0 0,-640 z" p:name="phone" id="c3eb913632224d2aaf4878a340779acf" style="fill: rgb(0, 0, 0); fill-opacity: 1;"/>
+
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:ActionBar" id="0fc834c957ed4fdb88f7550b98b52e8d" transform="matrix(1,0,0,1,28,78)"><p:metadata><p:property name="box"><![CDATA[360,80]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+
+			 <defs>
+			<linearGradient x1="0%" y1="0%" x2="0%" y2="100%" p:name="shadowFill" id="ac4c8dd7987e412e8389c8d6b1d207c3">
+
+				<stop offset="0" style="stop-color:#000000;stop-opacity:0.259" p:name="stop1" id="60a7c6b0804a42198337ef5d7e263313"/>
+				<stop offset="1" style="stop-color:#000000;stop-opacity:0" p:name="stop2" id="0637f962c12541f0906c4b62826caf4d"/>
+			</linearGradient>
+			 </defs>
+			 <rect p:name="bg" id="e361826e8df541e0b134dc926e8c1bbc" width="360" height="80" style="fill: rgb(0, 188, 212); fill-opacity: 1;"/>
+		 <rect width="1" height="6" style="fill: url(#ac4c8dd7987e412e8389c8d6b1d207c3)" p:name="shadow" id="c85ead3afaa0498ca4e66a68385f0b2f" transform="translate(0,80) scale(360,1)"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:NotificationBar" id="b2382e195769486f91470be3403a7144" transform="matrix(1,0,0,1,28.08544921875,78.15744018554688)"><p:metadata><p:property name="box"><![CDATA[360,24]]></p:property><p:property name="fillColor"><![CDATA[#00000025]]></p:property></p:metadata>
+
+			<defs>
+				<linearGradient p:name="statusIconBg" id="ac98d5edf6db453fb8a0f90136bb7544">
+					<stop style="stop-color:#ffffff;stop-opacity:0.28627452;" offset="0"/>
+				</linearGradient>
+				<linearGradient p:name="statusIconFg" id="68109d6ca4924d98a707beadca081819">
+					<stop style="stop-color:#ffffff;stop-opacity:0.90196079;" offset="0"/>
+				</linearGradient>
+			</defs>
+
+			<rect height="24" p:lockH="true" p:name="bg" id="bee6994d15bb480da6c1dab912cbc0ea" width="360" style="fill: rgb(0, 0, 0); fill-opacity: 0.145098;"/>
+
+			<g p:name="icons" id="f409d7cd1811498ab1e900dac422e841" transform="translate(240,5)">
+
+				<g style="fill: url(#ac98d5edf6db453fb8a0f90136bb7544)">
+					<path d="m0 2.532c4.821-3.376 11.239-3.376 16.06 0l-8.03 11.468z"/>
+					<path d="m28.662 14l14-14v14z"/>
+					<path d="m60.662 0v1h-1c-.554 0-1 .446-1 1v11c0 .554.446 1 1 1h7c.554 0 1-.446 1-1v-11c0-.554-.446-1-1-1h-1v-1h-5"/>
+				</g>
+
+				<g style="fill: url(#68109d6ca4924d98a707beadca081819)">
+					<path d="m2.026 5.426c3.605-2.524 8.403-2.524 12.01 0l-6 8.575z"/>
+					<path d="m28.662 14l7-7v7z"/>
+					<path d="m58.662 7v6c0 .554.446 1 1 1h7c.554 0 1-.446 1-1v-6z"/>
+
+					<path d="m82.71 13h-.879v-9.609l-2.9 1.077v-.82l3.633-1.348h.146v10.701"/>
+					<path d="m93.63 13h-6.68v-.674l3.494-3.962c.327-.371.603-.706.828-1 .229-.298.413-.574.549-.828.142-.259.242-.5.3-.725.063-.229.095-.457.095-.681 0-.322-.049-.615-.146-.879-.093-.269-.234-.5-.425-.696-.186-.195-.417-.347-.696-.454-.278-.107-.598-.161-.959-.161-.371 0-.706.063-1 .19-.293.122-.544.293-.754.513-.205.22-.364.481-.476.784-.112.303-.168.632-.168.989h-.872c0-.439.073-.854.22-1.245.151-.391.369-.732.652-1.025.283-.293.625-.525 1.025-.696.405-.171.864-.256 1.377-.256.479 0 .911.066 1.296.198.386.127.713.315.981.564.269.244.474.544.615.901.146.352.22.752.22 1.201 0 .322-.059.647-.176.974-.117.327-.273.652-.469.974-.195.322-.42.642-.674.959-.254.317-.515.63-.784.938l-2.974 3.362h5.603v.74"/>
+					<path d="m95.2 12.473c0-.171.054-.315.161-.432.112-.122.266-.183.461-.183.195 0 .349.061.461.183.112.117.168.261.168.432 0 .171-.056.313-.168.425-.112.107-.266.161-.461.161-.195 0-.349-.054-.461-.161-.107-.112-.161-.254-.161-.425m.015-6.76c0-.171.054-.315.161-.432.112-.122.266-.183.461-.183.195 0 .349.061.461.183.112.117.168.261.168.432 0 .171-.056.313-.168.425-.112.107-.266.161-.461.161-.195 0-.349-.054-.461-.161-.107-.112-.161-.254-.161-.425"/>
+					<path d="m100.38 7.192h.894c.41 0 .769-.054 1.077-.161.312-.112.574-.261.784-.447.21-.19.366-.41.469-.659.107-.254.161-.522.161-.806 0-.322-.046-.615-.139-.879-.088-.269-.225-.498-.41-.688-.181-.195-.413-.347-.696-.454-.278-.107-.61-.161-.996-.161-.337 0-.647.051-.93.154-.283.103-.53.249-.74.439-.21.19-.374.422-.491.696-.117.269-.176.571-.176.908h-.879c0-.43.081-.825.242-1.187.166-.361.391-.671.674-.93.288-.264.627-.466 1.018-.608.396-.146.823-.22 1.282-.22.469 0 .896.066 1.282.198.386.132.713.325.981.579.273.249.483.557.63.923.151.366.227.786.227 1.26 0 .239-.039.479-.117.718-.078.234-.193.457-.344.667-.151.21-.342.403-.571.579-.229.171-.493.313-.791.425.352.098.654.232.908.403.254.166.461.361.623.586.166.225.288.471.366.74.083.269.124.549.125.842 0 .483-.083.913-.249 1.289-.166.376-.396.696-.688.959-.293.259-.64.457-1.04.593-.4.132-.835.198-1.304.198-.435 0-.857-.063-1.267-.19-.405-.127-.769-.315-1.091-.564-.317-.254-.574-.571-.769-.952-.19-.381-.286-.825-.286-1.333h.879c0 .337.061.647.183.93.127.283.303.527.527.732.225.2.491.356.798.469.313.112.654.168 1.025.168.757 0 1.345-.193 1.765-.579.425-.391.637-.955.637-1.692 0-.386-.066-.718-.198-.996-.127-.278-.31-.505-.549-.681-.234-.181-.518-.312-.85-.396-.327-.083-.691-.125-1.091-.125h-.894v-.747"/>
+					<path d="m113.18 8.554c0 .781-.073 1.46-.22 2.036-.146.576-.359 1.055-.637 1.436-.278.376-.62.657-1.025.842-.405.186-.867.278-1.384.278-.513 0-.972-.093-1.377-.278-.405-.186-.75-.466-1.033-.842-.283-.381-.5-.859-.652-1.436-.151-.576-.227-1.255-.227-2.036v-1.802c0-.781.073-1.458.22-2.029.151-.576.366-1.05.645-1.421.283-.376.627-.654 1.033-.835.405-.186.864-.278 1.377-.278.513 0 .972.093 1.377.278.41.181.754.459 1.033.835.283.371.498.845.645 1.421.151.571.227 1.248.227 2.029v1.802m-.879-1.912c0-1.221-.2-2.144-.601-2.769-.396-.625-.996-.937-1.802-.938-.801 0-1.401.313-1.802.938-.4.625-.601 1.548-.601 2.769v2.01c0 .601.051 1.135.154 1.604.103.464.254.857.454 1.179.205.317.459.559.762.725.303.166.652.249 1.047.249.4 0 .749-.083 1.047-.249.303-.166.552-.408.747-.725.2-.322.349-.715.447-1.179.098-.469.146-1 .146-1.604v-2.01"/>
+				</g>
+			</g>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:SoftKeys" id="f40a4177d5194173a66c55559a970901" transform="matrix(1,0,0,1,28,670)"><p:metadata><p:property name="box"><![CDATA[360,48]]></p:property><p:property name="fillColor"><![CDATA[#000000FF]]></p:property></p:metadata>
+
+			<rect p:name="bg" id="ceb149837e794f1a86225457a60317ad" width="360" height="48" style="fill: rgb(0, 0, 0); fill-opacity: 1;"/>
+			<g style="stroke-width: 2px; stroke:#FFFFFF; stroke-opacity:0.9; fill: none;stroke-linejoin:round" p:name="icons" id="8df89673da11489ab590f4ee22deab51" transform="translate(72,15)">
+				<path d="m202.17 2h12c.554 0 1 .446 1 1v12c0 .554-.446 1-1 1h-12c-.554 0-1-.446-1-1v-12c0-.554.446-1 1-1z"/>
+				<path d="m15.168 9c0 10.196 1.286 9.454-7.544 4.356-8.83-5.098-8.83-3.613 0-8.711 8.83-5.098 7.544-5.841 7.544 4.356z"/>
+				<path d="m116.17 9c0 4.418-3.582 8-8 8-4.418 0-8-3.582-8-8 0-4.418 3.582-8 8-8 4.418 0 8 3.582 8 8z"/>
+			</g>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:tabs" id="7f724840c5ee46fab7ab6e252816663d" transform="matrix(1,0,0,1,28,154)"><p:metadata><p:property name="box"><![CDATA[360,48]]></p:property><p:property name="forceFont"><![CDATA[false]]></p:property><p:property name="highlightText"><![CDATA[true]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property><p:property name="highlightColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="contentText"><![CDATA[ITEM 1*|ITEM 2|ITEM 3]]></p:property><p:property name="textFont"><![CDATA[Roboto,sans-serif|500|normal|14px|none]]></p:property><p:property name="textColor"><![CDATA[#FFFFFF99]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+			<rect p:name="bg" id="b64d6a089ef3483bace94e3df6fad656" x="0" y="0" width="360" height="48" style="fill: rgb(0, 188, 212); fill-opacity: 1;"/>
+
+			<foreignObject p:name="content" id="f722f93e460c400e8d12828071e4fd56" x="0" y="0" width="360" height="48">
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					<ul style="list-style: outside none none; text-indent: 0px; padding: 0px; font-family: Roboto,sans-serif; font-size: 14px; font-weight: 500; font-style: normal; text-decoration: none;" p:name="list" id="3b9ea18867904dcb90744665a1b5e493"><li style="color: rgba(255, 255, 255, 1); background: rgba(0, 188, 212, 1); display: table-cell; margin: 0; height: 48px; width: 360px; text-align: center; vertical-align: middle; box-shadow: inset 0 -2px 0 0 rgba(255, 255, 255, 1)">ITEM 1</li><li style="color: rgba(255, 255, 255, 0.6); background: rgba(0, 188, 212, 1); display: table-cell; margin: 0; height: 48px; width: 360px; text-align: center; vertical-align: middle">ITEM 2</li><li style="color: rgba(255, 255, 255, 0.6); background: rgba(0, 188, 212, 1); display: table-cell; margin: 0; height: 48px; width: 360px; text-align: center; vertical-align: middle">ITEM 3</li></ul>
+				</div>
+			</foreignObject>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Checkbox" id="d247a698d89043fbac698eec438a9f1d" transform="matrix(1,0,0,1,56.5999755859375,235)"><p:metadata><p:property name="on"><![CDATA[true]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+			<path d="M 2,0 C 0.892,0 0,0.892 0,2 l 0,14 c 0,1.108 0.892,2 2,2 l 14,0 c 1.108,0 2,-0.892 2,-2 L 18,2 C 18,0.892 17.108,0 16,0 L 2,0 z m 12.5,3.90625 1.1875,1.1875 -8.125,8.125 L 6.96875,13.8125 6.375,13.21875 2.28125,9.125 3.46875,7.90625 6.96875,11.4375 14.5,3.90625 z" p:name="on" id="81c2b663c25c41f5866a9a82baee0807" style="visibility: visible; fill: rgb(0, 188, 212); fill-opacity: 1;"/>
+			<rect rx="2px" ry="2px" width="16px" height="16px" x="1px" y="1px" style="fill: rgb(0, 0, 0); fill-opacity: 0; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; visibility: hidden; display: none; stroke: rgb(0, 0, 0); stroke-opacity: 0.46;" p:name="off" id="2146567b449442f3a8887e3c40ab14e6"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:RadioButton" id="a38f5400b5614ac294fbc73b0cf0a106" transform="matrix(1,0,0,1,103.4000244140625,234.79998779296875)"><p:metadata><p:property name="on"><![CDATA[true]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+			<ellipse rx="5px" ry="5px" cx="10px" cy="10px" p:name="inner" id="9d74d229684b4bd5991f14fb07e6ea8f" style="visibility: visible; fill: rgb(0, 188, 212); fill-opacity: 1;"/>
+			<ellipse rx="9px" ry="9px" cx="10px" cy="10px" style="fill: rgb(0, 0, 0); fill-opacity: 0; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke: rgb(0, 188, 212); stroke-opacity: 1;" p:name="outer" id="83641e26313c4eb0a71ad14c0bbb6df0"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Switch" id="815c6a8af10a42cabb80792f37f127a6" transform="matrix(1,0,0,1,149.199951171875,238.39999389648438)"><p:metadata><p:property name="box"><![CDATA[36,14]]></p:property><p:property name="on"><![CDATA[true]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+
+			<defs>
+				<filter height="1.5" y="-0.25" width="1.37" x="-0.2" p:name="dropshadow" id="dcb2b0a6b3624ba4b6680b07d72aefb1">
+					<feFlood flood-opacity="0.4" flood-color="rgb(0,0,0)" result="flood" p:name="flood" id="effaf06e345141a985d33c7db3e9b454"/>
+					<feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+					<feGaussianBlur stdDeviation="1" result="blur"/>
+					<feOffset dx="0" dy="1.5" result="offset"/>
+					<feComposite in="SourceGraphic" in2="offset" operator="over"/>
+				</filter>
+			</defs>
+
+			<rect rx="7px" ry="7px" p:name="bgRect" id="140bff47a401409db5dc0ab56263e0f0" width="36" height="14" style="fill: rgb(0, 188, 212); fill-opacity: 0.5;"/>
+			<ellipse rx="10px" ry="10px" cy="7px" p:filter="url(#dcb2b0a6b3624ba4b6680b07d72aefb1)" p:name="thumb" id="0403abaa7405456cb01698ba7b422108" style="fill: rgb(0, 188, 212); fill-opacity: 1;" transform="translate(26,0)" filter="url(#dcb2b0a6b3624ba4b6680b07d72aefb1)"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Checkbox" id="cdb10c66b65c47e68bda065a94d9a4a5" transform="matrix(1,0,0,1,56.5999755859375,281)"><p:metadata><p:property name="on"><![CDATA[false]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+			<path d="M 2,0 C 0.892,0 0,0.892 0,2 l 0,14 c 0,1.108 0.892,2 2,2 l 14,0 c 1.108,0 2,-0.892 2,-2 L 18,2 C 18,0.892 17.108,0 16,0 L 2,0 z m 12.5,3.90625 1.1875,1.1875 -8.125,8.125 L 6.96875,13.8125 6.375,13.21875 2.28125,9.125 3.46875,7.90625 6.96875,11.4375 14.5,3.90625 z" p:name="on" id="2b578caed78342a9b2908e329327faa3" style="visibility: hidden; fill: rgb(0, 188, 212); fill-opacity: 1; display: none;"/>
+			<rect rx="2px" ry="2px" width="16px" height="16px" x="1px" y="1px" style="fill: rgb(0, 0, 0); fill-opacity: 0; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; visibility: visible; stroke: rgb(0, 0, 0); stroke-opacity: 0.46;" p:name="off" id="45f99de69bd24dd8b7fd9dfff467f2a4"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:RadioButton" id="846e7f6426304297b89722b22b332eac" transform="matrix(1,0,0,1,103.4000244140625,280.79998779296875)"><p:metadata><p:property name="on"><![CDATA[false]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+			<ellipse rx="5px" ry="5px" cx="10px" cy="10px" p:name="inner" id="d228b4c5744c436caa14307e8c7fb2d4" style="visibility: hidden; fill: rgb(0, 188, 212); fill-opacity: 1; display: none;"/>
+			<ellipse rx="9px" ry="9px" cx="10px" cy="10px" style="fill: rgb(0, 0, 0); fill-opacity: 0; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke: rgb(0, 0, 0); stroke-opacity: 0.46;" p:name="outer" id="f216a3cb638b49a1a7b1fb21cc92bd36"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Switch" id="7a0c8c57151f4661a3002fff0aae47f5" transform="matrix(1,0,0,1,149.199951171875,284.4000244140625)"><p:metadata><p:property name="box"><![CDATA[36,14]]></p:property><p:property name="on"><![CDATA[false]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+
+			<defs>
+				<filter height="1.5" y="-0.25" width="1.37" x="-0.2" p:name="dropshadow" id="f0a050a3414b403ab97cce97eee9402e">
+					<feFlood flood-opacity="0.4" flood-color="rgb(0,0,0)" result="flood" p:name="flood" id="52730c20af6948b291b8be2be98b61dd"/>
+					<feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+					<feGaussianBlur stdDeviation="1" result="blur"/>
+					<feOffset dx="0" dy="1.5" result="offset"/>
+					<feComposite in="SourceGraphic" in2="offset" operator="over"/>
+				</filter>
+			</defs>
+
+			<rect rx="7px" ry="7px" p:name="bgRect" id="ae3c4a648a4048afb4d0dd26c270083b" width="36" height="14" style="fill: rgb(0, 0, 0); fill-opacity: 0.26;"/>
+			<ellipse rx="10px" ry="10px" cy="7px" p:filter="url(#f0a050a3414b403ab97cce97eee9402e)" p:name="thumb" id="8d178aa51f14442d8a4694be3f1041fa" style="fill: rgb(250, 250, 250); fill-opacity: 1;" transform="translate(10,0)" filter="url(#f0a050a3414b403ab97cce97eee9402e)"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Checkbox" id="de54d342ecc04247a98c8bf1f1cd1567" transform="matrix(1,0,0,1,227.5999755859375,235)"><p:metadata><p:property name="on"><![CDATA[true]]></p:property><p:property name="disabled"><![CDATA[true]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+			<path d="M 2,0 C 0.892,0 0,0.892 0,2 l 0,14 c 0,1.108 0.892,2 2,2 l 14,0 c 1.108,0 2,-0.892 2,-2 L 18,2 C 18,0.892 17.108,0 16,0 L 2,0 z m 12.5,3.90625 1.1875,1.1875 -8.125,8.125 L 6.96875,13.8125 6.375,13.21875 2.28125,9.125 3.46875,7.90625 6.96875,11.4375 14.5,3.90625 z" p:name="on" id="062395de04294c578c0c5e3657eea488" style="visibility: visible; fill: rgb(0, 0, 0); fill-opacity: 0.26;"/>
+			<rect rx="2px" ry="2px" width="16px" height="16px" x="1px" y="1px" style="fill: rgb(0, 0, 0); fill-opacity: 0; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; visibility: hidden; display: none; stroke: rgb(0, 0, 0); stroke-opacity: 0.26;" p:name="off" id="992eb0237d084157955d20bda36e8474"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:RadioButton" id="03643ba8ded64b7799cfbaa6aa3eeca8" transform="matrix(1,0,0,1,274.4000244140625,234.79998779296875)"><p:metadata><p:property name="on"><![CDATA[true]]></p:property><p:property name="disabled"><![CDATA[true]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+			<ellipse rx="5px" ry="5px" cx="10px" cy="10px" p:name="inner" id="5b7bcf4c33864f11abd6a2017d155349" style="visibility: visible; fill: rgb(0, 0, 0); fill-opacity: 0.26;"/>
+			<ellipse rx="9px" ry="9px" cx="10px" cy="10px" style="fill: rgb(0, 0, 0); fill-opacity: 0; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke: rgb(0, 0, 0); stroke-opacity: 0.26;" p:name="outer" id="bfe0e350a7e846289498550a4b749919"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Switch" id="2acbf4ffbd0a4d1fad56a1183668f376" transform="matrix(1,0,0,1,320.199951171875,238.39999389648438)"><p:metadata><p:property name="box"><![CDATA[36,14]]></p:property><p:property name="on"><![CDATA[true]]></p:property><p:property name="disabled"><![CDATA[true]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+
+			<defs>
+				<filter height="1.5" y="-0.25" width="1.37" x="-0.2" p:name="dropshadow" id="59c96adf2218440f8f367cdeb638dfb3">
+					<feFlood flood-opacity="0.4" flood-color="rgb(0,0,0)" result="flood" p:name="flood" id="5e2e83aa437448b6b3213fc82d2fea60"/>
+					<feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+					<feGaussianBlur stdDeviation="1" result="blur"/>
+					<feOffset dx="0" dy="1.5" result="offset"/>
+					<feComposite in="SourceGraphic" in2="offset" operator="over"/>
+				</filter>
+			</defs>
+
+			<rect rx="7px" ry="7px" p:name="bgRect" id="7a7cbcc965fe4dbb92dacbe750a16738" width="36" height="14" style="fill: rgb(0, 0, 0); fill-opacity: 0.12;"/>
+			<ellipse rx="10px" ry="10px" cy="7px" p:filter="url(#59c96adf2218440f8f367cdeb638dfb3)" p:name="thumb" id="a18f112448844bf88d4c172339da5243" style="fill: rgb(189, 189, 189); fill-opacity: 1;" transform="translate(26,0)" filter="url(#59c96adf2218440f8f367cdeb638dfb3)"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Checkbox" id="38cceb651ecf4a6da484e87a8e7037a4" transform="matrix(1,0,0,1,227.5999755859375,281)"><p:metadata><p:property name="on"><![CDATA[false]]></p:property><p:property name="disabled"><![CDATA[true]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+			<path d="M 2,0 C 0.892,0 0,0.892 0,2 l 0,14 c 0,1.108 0.892,2 2,2 l 14,0 c 1.108,0 2,-0.892 2,-2 L 18,2 C 18,0.892 17.108,0 16,0 L 2,0 z m 12.5,3.90625 1.1875,1.1875 -8.125,8.125 L 6.96875,13.8125 6.375,13.21875 2.28125,9.125 3.46875,7.90625 6.96875,11.4375 14.5,3.90625 z" p:name="on" id="6dcdd3fa00db4afdb909c89da457dfb4" style="visibility: hidden; fill: rgb(0, 0, 0); fill-opacity: 0.26; display: none;"/>
+			<rect rx="2px" ry="2px" width="16px" height="16px" x="1px" y="1px" style="fill: rgb(0, 0, 0); fill-opacity: 0; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; visibility: visible; stroke: rgb(0, 0, 0); stroke-opacity: 0.26;" p:name="off" id="4ef22abc0ddb48129c726325701ad640"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:RadioButton" id="3944dad252d745baac8dd89714a33a0a" transform="matrix(1,0,0,1,274.4000244140625,280.79998779296875)"><p:metadata><p:property name="on"><![CDATA[false]]></p:property><p:property name="disabled"><![CDATA[true]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+			<ellipse rx="5px" ry="5px" cx="10px" cy="10px" p:name="inner" id="383debc6c9b44bab9cbee78b84cbece4" style="visibility: hidden; fill: rgb(0, 0, 0); fill-opacity: 0.26; display: none;"/>
+			<ellipse rx="9px" ry="9px" cx="10px" cy="10px" style="fill: rgb(0, 0, 0); fill-opacity: 0; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: round; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke: rgb(0, 0, 0); stroke-opacity: 0.26;" p:name="outer" id="e9735801b9b6451c8e6fd2176d9f34ab"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Switch" id="67afb513027341188610b069703ba0bc" transform="matrix(1,0,0,1,320.199951171875,284.4000244140625)"><p:metadata><p:property name="box"><![CDATA[36,14]]></p:property><p:property name="on"><![CDATA[false]]></p:property><p:property name="disabled"><![CDATA[true]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+
+			<defs>
+				<filter height="1.5" y="-0.25" width="1.37" x="-0.2" p:name="dropshadow" id="2d02e3c49266440bb4d78bdf9fc9b77b">
+					<feFlood flood-opacity="0.4" flood-color="rgb(0,0,0)" result="flood" p:name="flood" id="72a66317fca445b49dd138d3ff7c94c8"/>
+					<feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+					<feGaussianBlur stdDeviation="1" result="blur"/>
+					<feOffset dx="0" dy="1.5" result="offset"/>
+					<feComposite in="SourceGraphic" in2="offset" operator="over"/>
+				</filter>
+			</defs>
+
+			<rect rx="7px" ry="7px" p:name="bgRect" id="c567afdbd2684d00a187ab4483505e84" width="36" height="14" style="fill: rgb(0, 0, 0); fill-opacity: 0.12;"/>
+			<ellipse rx="10px" ry="10px" cy="7px" p:filter="url(#2d02e3c49266440bb4d78bdf9fc9b77b)" p:name="thumb" id="8574816bd1a84f6d878826c3f47ae9da" style="fill: rgb(189, 189, 189); fill-opacity: 1;" transform="translate(10,0)" filter="url(#2d02e3c49266440bb4d78bdf9fc9b77b)"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Divider" id="69994c907fc840bebcfd3be1f1ee42b2" transform="matrix(1,0,0,1,35,320)"><p:metadata><p:property name="box"><![CDATA[345,10]]></p:property><p:property name="strokeColor"><![CDATA[#0000001F]]></p:property><p:property name="strokeStyle"><![CDATA[1|]]></p:property></p:metadata>
+			<rect style="fill: #000000; fill-opacity: 0; stroke: none;" x="0" y="0" p:name="bgRect" id="caf4d88e8bb241f0a642ee919beb5ef0" width="345" height="10"/>
+			<path style="fill: none; stroke: rgb(0, 0, 0); stroke-opacity: 0.121569; stroke-width: 1;" d="M 0 5 L 345 5" p:name="line" id="7669a70bc69b47b58c0b140bfd460b39" transform="translate(0.5,0.5)"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Button" p:sc="Button (Colored)" id="3acea403839e46f29662c6d13fafac28" transform="matrix(1,0,0,1,42.919921875,563.2000732421875)"><p:metadata><p:property name="box"><![CDATA[96,36]]></p:property><p:property name="shadow"><![CDATA[true]]></p:property><p:property name="forceFont"><![CDATA[false]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property><p:property name="label"><![CDATA[BUTTON]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textFont"><![CDATA["Roboto Medium", Roboto, Arial,sans-serif|500|normal|14px|none]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+			<defs>
+				<filter p:name="dropshadow" id="7d8e1f870e3f425f830411293603de11">
+					<feFlood flood-opacity="0.35" flood-color="rgb(0,0,0)" result="flood" p:name="flood" id="67de56fcde8c47d9991a6455e24bacaf"/>
+					<feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+					<feGaussianBlur stdDeviation="2" result="blur"/>
+					<feOffset dx="0" dy="1" result="offset"/>
+					<feComposite in="SourceGraphic" in2="offset" operator="over"/>
+				</filter>
+			</defs>
+
+			<rect rx="2px" ry="2px" p:filter="url(#7d8e1f870e3f425f830411293603de11)" p:name="bg" id="487235568228473d8af2c87b77c14e3e" width="96" height="36" style="fill: rgb(0, 188, 212); fill-opacity: 1;" filter="url(#7d8e1f870e3f425f830411293603de11)"/>
+
+			<foreignObject p:name="content" id="5704b876226e418f9493f142fe718c88" x="0" y="0" width="96" height="36">
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					<div p:name="text" id="bbd49d6235294d11b4e148d3b37ef574" style="font-family: &quot;Roboto Medium&quot;,Roboto,Arial,sans-serif; font-size: 14px; font-weight: 500; font-style: normal; text-decoration: none; color: rgb(255, 255, 255); opacity: 1;"><div style="display: table-cell; height: 36px; width: 96px; text-align: center; vertical-align: middle">BUTTON</div></div>
+				</div>
+			</foreignObject>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Slider" id="0a5acc99528f4140b8b22aed0ed17d30" transform="matrix(1,0,0,1,48.79998779296875,347.239990234375)"><p:metadata><p:property name="box"><![CDATA[319.24,10]]></p:property><p:property name="prog"><![CDATA[72,0]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="bgFillColor"><![CDATA[#00000040]]></p:property><p:property name="fgFillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+			<rect y="4px" p:name="bgRect" id="fcae680c830c4338b6f19c339626f04d" width="247.24" height="2" transform="translate(72,0)" style="fill: rgb(0, 0, 0); fill-opacity: 0.25098;"/>
+			<rect y="4px" p:name="fgRect" id="9f17352637824d93b21f3c215227e499" width="72" height="2" style="fill: rgb(0, 188, 212); fill-opacity: 1;"/>
+			<ellipse p:name="thumb" id="05736528d67f4ed2913dd215632961f9" cx="6" cy="6" rx="6" ry="6" style="fill: rgb(0, 188, 212); fill-opacity: 1;" transform="translate(66,-1)"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:ProgressBar" id="5c219d9001dc4e919660ec2c426b365c" transform="matrix(1,0,0,1,48.12005615234375,379.84002685546875)"><p:metadata><p:property name="box"><![CDATA[318.62016,4]]></p:property><p:property name="prog"><![CDATA[229,0]]></p:property><p:property name="buffer"><![CDATA[318.62016,0]]></p:property><p:property name="bgFillColor"><![CDATA[#00BCD44D]]></p:property><p:property name="fgFillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+			<rect p:name="bgRect" id="3db8ba5aa14d4b4ab96a5e061d23c6a8" width="318.62" height="4" style="fill: rgb(0, 188, 212); fill-opacity: 0.301961;"/>
+			<rect p:name="fgRect" id="fc5ec695ba41435d8d4e3994a22b2e37" width="229" height="4" style="fill: rgb(0, 188, 212); fill-opacity: 1;"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Divider" id="ee6b6d8fea6846459a3f9ba76a262183" transform="matrix(1,0,0,1,35,400)"><p:metadata><p:property name="box"><![CDATA[345,10]]></p:property><p:property name="strokeColor"><![CDATA[#0000001F]]></p:property><p:property name="strokeStyle"><![CDATA[1|]]></p:property></p:metadata>
+			<rect style="fill: #000000; fill-opacity: 0; stroke: none;" x="0" y="0" p:name="bgRect" id="b730203754c64d7c86ea86a4920082a7" width="345" height="10"/>
+			<path style="fill: none; stroke: rgb(0, 0, 0); stroke-opacity: 0.121569; stroke-width: 1;" d="M 0 5 L 345 5" p:name="line" id="9c3757031c094027a897e18ce1fc149b" transform="translate(0.5,0.5)"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:TextField" id="5424bdef55f346f6b13cc77362c439b3" transform="matrix(1,0,0,1,49,424)"><p:metadata><p:property name="box"><![CDATA[144,47]]></p:property><p:property name="forceFont"><![CDATA[true]]></p:property><p:property name="focused"><![CDATA[true]]></p:property><p:property name="disabled"><![CDATA[false]]></p:property><p:property name="focusColor"><![CDATA[#00BCD4FF]]></p:property><p:property name="fillColor"><![CDATA[#C8C8C8FF]]></p:property><p:property name="contentText"><![CDATA[Text content]]></p:property><p:property name="textFont"><![CDATA[Roboto,sans-serif|500|normal|16px|none]]></p:property><p:property name="textColor"><![CDATA[#212121FF]]></p:property><p:property name="textAlign"><![CDATA[0,2]]></p:property><p:property name="labelText"><![CDATA[Label]]></p:property><p:property name="labelFont"><![CDATA[Roboto, sans-serif|500|normal|12px|none]]></p:property><p:property name="labelColor"><![CDATA[#757575FF]]></p:property><p:property name="labelAlign"><![CDATA[0,0]]></p:property></p:metadata>
+
+			<foreignObject p:name="content" id="fe68667ded8b46bb9ed8193bbfcc6605" x="0" y="0" width="144" height="47" style="">
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					<div p:name="text" id="fc0aee64a8654308ae87f49f097b55d2"><div style="color: rgba(117, 117, 117, 1); font: 500 normal 12px Roboto, sans-serif; text-align: left; vertical-align: top; font-family: Roboto, sans-serif; font-weight: 500">Label</div><div style="padding: 8px 0px; display: table-cell; height: 19px; width: 144px; font: 500 normal 16px Roboto,sans-serif; color: rgba(33, 33, 33, 1); text-align: left; vertical-align: bottom; font-family: Roboto, sans-serif; font-weight: 500">Text content</div></div>
+				</div>
+			</foreignObject>
+
+			<rect style="fill: rgb(0, 0, 0); fill-opacity: 0;" p:name="fakeLabel" id="e483db37f2554422b0bcea4ea07e2bda" width="144" height="12"/>
+
+			<path d="M 0 47 L 144 47" p:name="line" id="2a058ae56c6f41359b9dbdc7b35803f4" style="stroke: rgb(0, 188, 212); stroke-opacity: 1; stroke-width: 2;"/>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:FloatingActionButton" id="6aa5359ed4a24b6dbb25fdfe5e873bcb" transform="matrix(1,0,0,1,319.199951171875,553.4000854492188)"><p:metadata><p:property name="box"><![CDATA[56,56]]></p:property><p:property name="shadow"><![CDATA[true]]></p:property><p:property name="fillColor"><![CDATA[#00BCD4FF]]></p:property></p:metadata>
+
+			<defs>
+				<filter p:name="dropshadow" id="dc66932f96c64838b55ee007e600f465">
+					<feFlood flood-opacity="0.35" flood-color="rgb(0,0,0)" result="flood" p:name="flood" id="bb324f365caf4142ab44ee00a73e0c25"/>
+					<feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+					<feGaussianBlur stdDeviation="2" result="blur"/>
+					<feOffset dx="0" dy="1" result="offset"/>
+					<feComposite in="SourceGraphic" in2="offset" operator="over"/>
+				</filter>
+			</defs>
+			<ellipse rx="28" ry="28" p:filter="url(#dc66932f96c64838b55ee007e600f465)" p:name="bg" id="a9fa9751c6594c6789f956441e4d60db" cx="28" cy="28" style="fill: rgb(0, 188, 212); fill-opacity: 1;" filter="url(#dc66932f96c64838b55ee007e600f465)"/>
+
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:SnackbarFloating" p:sc="Snackbar (full-width)" id="e30b788098c24a0297c4993bb6abf449" transform="matrix(1,0,0,1,28,622)"><p:metadata><p:property name="box"><![CDATA[360,48]]></p:property><p:property name="forceFont"><![CDATA[false]]></p:property><p:property name="rounded"><![CDATA[false]]></p:property><p:property name="toast"><![CDATA[false]]></p:property><p:property name="fillColor"><![CDATA[#323232FF]]></p:property><p:property name="contentText"><![CDATA[Snackbar]]></p:property><p:property name="textFont"><![CDATA[Roboto,sans-serif|500|normal|14px|none]]></p:property><p:property name="textColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="textAlign"><![CDATA[0,1]]></p:property></p:metadata>
+
+
+			<rect p:name="bg" id="967a545e3bdd4bf9bd30a1c9e9b01226" x="0" y="0" width="360" height="48" style="fill: rgb(50, 50, 50); fill-opacity: 1;" rx="0" ry="0"/>
+
+			<foreignObject p:name="content" id="3c44f6c0b90f40b2b5b1545df28c76ed" x="0" y="0" width="360" height="48" style="">
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					<div p:name="list" id="4a8c949c70aa4d94892152105a54f404" style="font-family: Roboto,sans-serif; font-size: 14px; font-weight: 500; font-style: normal; text-decoration: none; color: rgb(255, 255, 255); opacity: 1;"><div style="padding: 12px 24px; display: table-cell; height: 24px; width: 312px; text-align: left; vertical-align: middle">Snackbar</div></div>
+				</div>
+			</foreignObject>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:Button" id="333b2fc560a44798999bb9c4244d39dd" transform="matrix(1,0,0,1,148,563)"><p:metadata><p:property name="box"><![CDATA[96,36]]></p:property><p:property name="shadow"><![CDATA[true]]></p:property><p:property name="forceFont"><![CDATA[false]]></p:property><p:property name="fillColor"><![CDATA[#FFFFFFFF]]></p:property><p:property name="label"><![CDATA[BUTTON]]></p:property><p:property name="textColor"><![CDATA[#212121FF]]></p:property><p:property name="textFont"><![CDATA["Roboto Medium", Roboto, Arial,sans-serif|500|normal|14px|none]]></p:property><p:property name="textAlign"><![CDATA[1,1]]></p:property></p:metadata>
+
+			<defs>
+				<filter p:name="dropshadow" id="11268a450b4449d689f1a8d845426da5">
+					<feFlood flood-opacity="0.35" flood-color="rgb(0,0,0)" result="flood" p:name="flood" id="c8fb87bd40ba4ac9b4bc3a2e6228c875"/>
+					<feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+					<feGaussianBlur stdDeviation="2" result="blur"/>
+					<feOffset dx="0" dy="1" result="offset"/>
+					<feComposite in="SourceGraphic" in2="offset" operator="over"/>
+				</filter>
+			</defs>
+
+			<rect rx="2px" ry="2px" p:filter="url(#11268a450b4449d689f1a8d845426da5)" p:name="bg" id="e76ca297626b4f6187aa5a897a42c43c" width="96" height="36" style="fill: rgb(255, 255, 255); fill-opacity: 1;" filter="url(#11268a450b4449d689f1a8d845426da5)"/>
+
+			<foreignObject p:name="content" id="6d93a3de725f4d8cb66d5f7121e232d3" x="0" y="0" width="96" height="36">
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					<div p:name="text" id="8e10f45a1c20450e9abd9c5cee193a87" style="font-family: &quot;Roboto Medium&quot;,Roboto,Arial,sans-serif; font-size: 14px; font-weight: 500; font-style: normal; text-decoration: none; color: rgb(33, 33, 33); opacity: 1;"><div style="display: table-cell; height: 36px; width: 96px; text-align: center; vertical-align: middle">BUTTON</div></div>
+				</div>
+			</foreignObject>
+		</g><g xmlns="http://www.w3.org/2000/svg" p:type="Shape" xmlns:p="http://www.evolus.vn/Namespace/Pencil" p:def="nz.nwatson.AndroidLollipop:TextField" id="fd145bd8b227400ab3941ab42df4713f" transform="matrix(1,0,0,1,221,424)"><p:metadata><p:property name="box"><![CDATA[144,47]]></p:property><p:property name="forceFont"><![CDATA[true]]></p:property><p:property name="focused"><![CDATA[false]]></p:property><p:property name="disabled"><![CDATA[true]]></p:property><p:property name="focusColor"><![CDATA[#00BCD4FF]]></p:property><p:property name="fillColor"><![CDATA[#C8C8C8FF]]></p:property><p:property name="contentText"><![CDATA[Text content]]></p:property><p:property name="textFont"><![CDATA[Roboto,sans-serif|500|normal|16px|none]]></p:property><p:property name="textColor"><![CDATA[#212121FF]]></p:property><p:property name="textAlign"><![CDATA[0,2]]></p:property><p:property name="labelText"><![CDATA[Label]]></p:property><p:property name="labelFont"><![CDATA[Roboto, sans-serif|500|normal|12px|none]]></p:property><p:property name="labelColor"><![CDATA[#757575FF]]></p:property><p:property name="labelAlign"><![CDATA[0,0]]></p:property></p:metadata>
+
+			<foreignObject p:name="content" id="e0a157b71c82477f894c8c77e8fd69c4" x="0" y="0" width="144" height="47" style="">
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					<div p:name="text" id="0ac67dc5e4114b529dea60e28a0d190f"><div style="color: rgba(33, 33, 33, 0.26); font: 500 normal 12px Roboto, sans-serif; text-align: left; vertical-align: top; font-family: Roboto, sans-serif; font-weight: 500">Label</div><div style="padding: 8px 0px; display: table-cell; height: 19px; width: 144px; font: 500 normal 16px Roboto,sans-serif; color: rgba(33, 33, 33, 0.26); text-align: left; vertical-align: bottom; font-family: Roboto, sans-serif; font-weight: 500">Text content</div></div>
+				</div>
+			</foreignObject>
+
+			<rect style="fill: rgb(0, 0, 0); fill-opacity: 0;" p:name="fakeLabel" id="09db75d26fd34bc7bc78e5383edb7ab1" width="144" height="12"/>
+
+			<path d="M 0 47 L 144 47" p:name="line" id="2535f70dab2241cabe7c308a9e12247b" style="stroke: rgb(200, 200, 200); stroke-opacity: 1; stroke-width: 1; stroke-dasharray: 1, 3;"/>
+		</g></Content></Page></Pages></Document>

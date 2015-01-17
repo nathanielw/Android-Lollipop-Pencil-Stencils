@@ -1323,4 +1323,41 @@ MenuItem]]></Property>
 			</foreignObject>
 		</p:Content>
 	</Shape>
+
+	<Shape id="Phone" displayName="Phone" icon="Icons/Phone.png">
+		<Properties>
+			<PropertyGroup>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Background color" type="Color">#000000FF</Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Actions>
+			<Action id="getSnappingGuide">
+				<Impl>
+				var b = this.getBounding();
+				return [
+					new SnappingData("InnerLeft", b.x + 18, "Left", true, this.id),
+					new SnappingData("InnerRight", b.x + b.width - 18, "Right", true, this.id),
+					new SnappingData("InnerTop", b.y + 68, "Top", false, this.id),
+					new SnappingData("InnerBottom", b.y + 68 + 640, "Bottom", false, this.id)
+				];
+				</Impl>
+			</Action>
+		</Actions>
+
+		<Behaviors>
+			<For ref="phone">
+				<Fill>$fillColor</Fill>
+			</For>
+		</Behaviors>
+
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil"
+		           xmlns="http://www.w3.org/2000/svg">
+
+			<path id="phone" d="M 196.4687,0.00219 C 140.2618,-0.10611 84.5791,3.79919 30.1563,12.03339 16.1048,14.20359 10e-5,26.23049 0,42.93969 l 0,712.8437 c 1e-4,16.7092 16.1048,28.7359 30.1563,30.9062 112.0799,15.8578 229.0941,16.1103 335.6874,0 14.0514,-2.1703 30.1563,-14.197 30.1563,-30.9062 l 0,-712.8437 c 0,-16.7092 -16.105,-28.7361 -30.1563,-30.9063 -56.4368,-7.8015 -113.168,-11.923 -169.375,-12.0312 z m -178.4687,68 360,0 0,640 -360,0 0,-640 z"/>
+
+		</p:Content>
+	</Shape>
 </Shapes>
