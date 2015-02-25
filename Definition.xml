@@ -307,7 +307,11 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			<For ref="bg">
 				<Box>$box</Box>
 				<Fill>$fillColor</Fill>
+			</For>			
+
+			<For ref="shadow">
 				<ApplyFilter>$shadow</ApplyFilter>
+				<Visibility>$shadow</Visibility>
 			</For>
 
 			<For ref="content">
@@ -349,14 +353,12 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 				<Font>$textFont</Font>
                 <Color>$textColor</Color>
 			</For>
-
-
-
 		</Behaviors>
+
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
 
 			<defs>
-				<filter id="dropshadow">
+				<filter id="dropShadow">
 					<feFlood
 						flood-opacity="0.35"
 						flood-color="rgb(0,0,0)"
@@ -365,23 +367,19 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 					<feComposite
 						in="flood"
 						in2="SourceGraphic"
-						operator="in"
-						result="composite1" />
+						operator="in" />
 					<feGaussianBlur
-						stdDeviation="2"
-						result="blur" />
+						stdDeviation="2" />
 					<feOffset
 						dx="0"
-						dy="1"
-						result="offset" />
-					<feComposite
-						in="SourceGraphic"
-						in2="offset"
-						operator="over" />
+						dy="1" />
 				</filter>
+
+				<rect id="bg" rx="2px" ry="2px" />
 			</defs>
 
-			<rect id="bg" rx="2px" ry="2px" p:filter="url(#dropshadow)" />
+			<use xlink:href="#bg" id="shadow" p:heavy="true" p:filter="url(#dropShadow)" />
+			<use xlink:href="#bg" />
 
 			<foreignObject id="content">
 				<div xmlns="http://www.w3.org/1999/xhtml" >
@@ -419,13 +417,16 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			<For ref="bg">
 				<EllipseFit>$box</EllipseFit>
 				<Fill>$fillColor</Fill>
+			</For>
+			<For ref="shadow">
 				<ApplyFilter>$shadow</ApplyFilter>
+				<Visibility>$shadow</Visibility>
 			</For>
 		</Behaviors>
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
 
 			<defs>
-				<filter id="dropshadow">
+                <filter id="dropShadow" height="1.2558399" y="-0.12792" width="1.06396" x="-0.03198">
 					<feFlood
 						flood-opacity="0.35"
 						flood-color="rgb(0,0,0)"
@@ -434,23 +435,19 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 					<feComposite
 						in="flood"
 						in2="SourceGraphic"
-						operator="in"
-						result="composite1" />
+						operator="in" />
 					<feGaussianBlur
-						stdDeviation="2"
-						result="blur" />
+						stdDeviation="2" />
 					<feOffset
 						dx="0"
-						dy="1"
-						result="offset" />
-					<feComposite
-						in="SourceGraphic"
-						in2="offset"
-						operator="over" />
-				</filter>
-			</defs>
-			<ellipse id="bg" rx="23" ry="23" p:filter="url(#dropshadow)" />
+						dy="1" />
+                </filter>
 
+				<ellipse id="bg" rx="23" ry="23" />
+			</defs>
+
+			<use xlink:href="#bg" id="shadow" p:heavy="true" p:filter="url(#dropShadow)" />
+			<use xlink:href="#bg" />
 		</p:Content>
 	</Shape>
 
@@ -462,6 +459,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 		<Properties>
 			<PropertyGroup>
 				<Property name="box" type="Dimension">344,224</Property>
+				<Property name="shadow" displayName="Shadow" type="Bool">true</Property>
 			</PropertyGroup>
 			<PropertyGroup name="Background">
 				<Property name="fillColor" displayName="Sheet Color" type="Color"><E>$$neutralFillColor</E></Property>
@@ -484,14 +482,17 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			<For ref="card">
 				<Box>$box</Box>
 				<Fill>$fillColor</Fill>
-				<ApplyFilter>true</ApplyFilter>
+			</For>
+			<For ref="shadow">
+				<ApplyFilter>$shadow</ApplyFilter>
+				<Visibility>$shadow</Visibility>
 			</For>
 		</Behaviors>
 		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
 										xmlns="http://www.w3.org/2000/svg">
 
-			<defs>
-				<filter id="dropshadow">
+			<defs>                
+				<filter id="dropShadow">
 					<feFlood
 						flood-opacity="0.35"
 						flood-color="rgb(0,0,0)"
@@ -500,22 +501,20 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 					<feComposite
 						in="flood"
 						in2="SourceGraphic"
-						operator="in"
-						result="composite1" />
+						operator="in" />
 					<feGaussianBlur
-						stdDeviation="2"
-						result="blur" />
+						stdDeviation="2" />
 					<feOffset
 						dx="0"
-						dy="1"
-						result="offset" />
-					<feComposite
-						in="SourceGraphic"
-						in2="offset"
-						operator="over" />
+						dy="1" />
 				</filter>
+
+				<rect id="card" rx="2px" ry="2px" />
 			</defs>
-			<rect id="card" rx="2px" ry="2px" p:filter="url(#dropshadow)" />
+
+			<use xlink:href="#card" id="shadow" p:heavy="true" p:filter="url(#dropShadow)" />
+			<use xlink:href="#card" />
+
 		</p:Content>
 	</Shape>
 
@@ -523,6 +522,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 		<Properties>
 			<PropertyGroup>
 				<Property name="box" type="Dimension">280,224</Property>
+				<Property name="shadow" displayName="Shadow" type="Bool">true</Property>
 			</PropertyGroup>
 			<PropertyGroup name="Background">
 				<Property name="fillColor" displayName="Sheet Color" type="Color"><E>$$neutralFillColor</E></Property>
@@ -545,14 +545,17 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			<For ref="card">
 				<Box>$box</Box>
 				<Fill>$fillColor</Fill>
-				<ApplyFilter>true</ApplyFilter>
+			</For>
+			<For ref="shadow">
+				<ApplyFilter>$shadow</ApplyFilter>
+				<Visibility>$shadow</Visibility>
 			</For>
 		</Behaviors>
 		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
 										xmlns="http://www.w3.org/2000/svg">
 
-			<defs>
-				<filter id="dropshadow" height="1.28" y="-0.14">
+			<defs>                
+				<filter id="dropShadow" height="1.28" y="-0.14">
 					<feFlood
 						flood-opacity="0.45"
 						flood-color="rgb(0,0,0)"
@@ -561,22 +564,19 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 					<feComposite
 						in="flood"
 						in2="SourceGraphic"
-						operator="in"
-						result="composite1" />
+						operator="in" />
 					<feGaussianBlur
-						stdDeviation="10"
-						result="blur" />
+						stdDeviation="10" />
 					<feOffset
 						dx="0"
-						dy="10"
-						result="offset" />
-					<feComposite
-						in="SourceGraphic"
-						in2="offset"
-						operator="over" />
+						dy="1" />
 				</filter>
+
+				<rect id="card" rx="2px" ry="2px" />
 			</defs>
-			<rect id="card" rx="2px" ry="2px" p:filter="url(#dropshadow)" />
+
+			<use xlink:href="#card" id="shadow" p:heavy="true" p:filter="url(#dropShadow)" />
+			<use xlink:href="#card" />
 		</p:Content>
 	</Shape>
 
@@ -617,6 +617,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			<PropertyGroup>
 				<Property name="box" type="Dimension">168,224</Property>
 				<Property name="scrollbar" displayName="Scrollbar" type="Bool">false</Property>
+				<Property name="shadow" displayName="Shadow" type="Bool">true</Property>
 				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
 			</PropertyGroup>
 
@@ -638,8 +639,13 @@ MenuItem]]></Property>
 			<For ref="bg">
 				<Bound>Bound.fromBox($box)</Bound>
 				<Fill>$fillColor</Fill>
-				<ApplyFilter>true</ApplyFilter>
 			</For>
+
+			<For ref="shadow">
+				<ApplyFilter>$shadow</ApplyFilter>
+				<Visibility>$shadow</Visibility>
+			</For>
+
 			<For ref="scrollbar">
 				<Visibility>$scrollbar</Visibility>
 				<Transform>[translate($box.w - 4, 0), scale(1, $box.h * 0.75)]</Transform>
@@ -692,7 +698,7 @@ MenuItem]]></Property>
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
 
 			<defs>
-				<filter id="dropshadow">
+				<filter id="dropShadow">
 					<feFlood
 						flood-opacity="0.35"
 						flood-color="rgb(0,0,0)"
@@ -701,23 +707,20 @@ MenuItem]]></Property>
 					<feComposite
 						in="flood"
 						in2="SourceGraphic"
-						operator="in"
-						result="composite1" />
+						operator="in" />
 					<feGaussianBlur
-						stdDeviation="2"
-						result="blur" />
+						stdDeviation="2" />
 					<feOffset
 						dx="0"
-						dy="1"
-						result="offset" />
-					<feComposite
-						in="SourceGraphic"
-						in2="offset"
-						operator="over" />
+						dy="1" />
 				</filter>
+
+				<rect id="bg" rx="2px" ry="2px" />
 			</defs>
 
-			<rect id="bg" rx="2px" ry="2px" p:filter="url(#dropshadow)" />
+			<use xlink:href="#bg" id="shadow" p:heavy="true" p:filter="url(#dropShadow)" />
+			<use xlink:href="#bg" />
+
 			<rect id="scrollbar" width="4px" height="1px" style="fill:#000000;fill-opacity:0.12" />
 
 			<foreignObject id="content">
@@ -812,6 +815,7 @@ MenuItem]]></Property>
 				<Property name="box" type="Dimension" p:lockHeight="true" p:lockWidth="true">36,14</Property>
                 <Property name="on" displayName="On" type="Bool">true</Property>
                 <Property name="disabled" displayName="Disabled" type="Bool">false</Property>
+                <Property name="shadow" displayName="Shadow" type="Bool">true</Property>
 			</PropertyGroup>
 			<PropertyGroup name="Background">
 				<Property name="fillColor" displayName="Color" type="Color"><E>$$fillColor</E></Property>
@@ -828,11 +832,15 @@ MenuItem]]></Property>
 				<Transform>[translate($on.value ? $box.w - 10: 10,0)]</Transform>
 				<ApplyFilter>true</ApplyFilter>
 			</For>
+			<For ref="shadow">
+				<ApplyFilter>$shadow</ApplyFilter>
+				<Visibility>$shadow</Visibility>
+			</For>
 		</Behaviors>
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
 
 			<defs>
-				<filter id="dropshadow" height="1.5" y="-0.25" width="1.37" x="-0.2">
+				<filter id="dropShadow" height="1.5" y="-0.25" width="1.37" x="-0.2">
 					<feFlood
 						flood-opacity="0.4"
 						flood-color="rgb(0,0,0)"
@@ -841,24 +849,20 @@ MenuItem]]></Property>
 					<feComposite
 						in="flood"
 						in2="SourceGraphic"
-						operator="in"
-						result="composite1" />
+						operator="in" />
 					<feGaussianBlur
-						stdDeviation="1"
-						result="blur" />
+						stdDeviation="1" />
 					<feOffset
 						dx="0"
-						dy="1.5"
-						result="offset" />
-					<feComposite
-						in="SourceGraphic"
-						in2="offset"
-						operator="over" />
+						dy="1.5" />
 				</filter>
+
+				<ellipse id="thumb" rx="10px" ry="10px" cy="7px" />
 			</defs>
 
 			<rect id="bgRect" rx="7px" ry="7px" />
-			<ellipse id="thumb" rx="10px" ry="10px" cy="7px" p:filter="url(#dropshadow)" />
+			<use xlink:href="#thumb" id="shadow" p:heavy="true" p:filter="url(#dropShadow)" />
+			<use xlink:href="#thumb" />
 		</p:Content>
 	</Shape>
 
