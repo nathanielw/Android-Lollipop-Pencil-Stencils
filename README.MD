@@ -17,4 +17,6 @@ See [#2](/../../issues/2) for a full list of included components - requests & co
 ## Notes
 Works best with the Roboto font installed.
 
-If an element's text looks too heavy/bold, try selecting "Force Roboto font" from the item's right-click menu. (Pencil doesn't give control over font weights beyond normal or bold, which causes some problems)
+If an element's text looks too heavy/bold, try selecting "Force Roboto font" from the item's right-click menu. (Pencil doesn't give control over font weights beyond normal or bold, which causes some problems).
+
+Check out my [Material Icons for Pencil repo](https://github.com/nathanielw/Material-Icons-for-Pencil) if you want to use Google's Material Design Icons in your mockups.
