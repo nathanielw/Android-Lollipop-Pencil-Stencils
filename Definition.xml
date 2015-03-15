@@ -738,6 +738,30 @@ MenuItem]]></Property>
 		</p:Content>
 	</Shape>
 
+	<Shape id="LoadingSpinner" displayName="Loading Spinner" icon="Icons/LoadingSpinner.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension" p:lockRatio="true">42,42</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Line">
+				<Property name="fillColor" displayName="Color" type="Color"><E>$$fillColor</E></Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="outer">
+				<StrokeColor>$fillColor</StrokeColor>
+				<Transform>scale($box.w / 42, $box.h / 42)</Transform>
+			</For>
+		</Behaviors>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="M 40,21 C 40,31.493408 31.49341,40 21,40 10.506589,40 2,31.493408 2,21 2,10.506589 10.506589,2 21,2 c 0,0 0,0 0,0"
+				id="outer"
+				style="fill:#000000;fill-opacity:0;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+		</p:Content>
+	</Shape>
+
 	<Shape id="ProgressBar" displayName="Progress Bar" icon="Icons/ProgressBar.png">
 		<Properties>
 			<PropertyGroup>
