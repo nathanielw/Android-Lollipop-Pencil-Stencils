@@ -520,81 +520,6 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 		</p:Content>
 	</Shape>
 
-
-	<Shape id="Text" displayName="Text" icon="Icons/Text.png">
-		<Properties>
-			<PropertyGroup>
-				<Property name="box" type="Dimension">96,36</Property>
-			</PropertyGroup>
-			<PropertyGroup name="Background">
-				<Property name="fillColor" displayName="Color" type="Color">#FFFFFF00</Property>
-			</PropertyGroup>
-
-			<PropertyGroup name="Text">
-				<Property name="label" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: $textAlign, multi: true})"><![CDATA[Text]]></Property>
-				<Property name="weight" displayName="Font weight" type="Enum"
-					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">400</Property>
-				<Property name="textColor" displayName="Color" type="Color"><E>$$defaultTextColor</E></Property>
-				<Property name="textFont" displayName="Font" type="Font"><E>$$defaultTextFont</E></Property>
-
-				<Property name="textAlign" displayName="Text Alignment" type="Alignment">0,0</Property>
-			</PropertyGroup>
-		</Properties>
-		<Behaviors>
-			<For ref="bg">
-				<Box>$box</Box>
-				<Fill>$fillColor</Fill>
-			</For>
-
-			<For ref="content">
-				<Bound>new Bound(0, 0, $box.w, $box.h)</Bound>
-			</For>
-
-			<For ref="text">
-				<DomContent>
-					<![CDATA[
-
-					var specs = [];
-
-					var text = $label.value;
-
-					var css = new CSS();
-
-					css.set("display", "table-cell");
-					css.set("height", $box.h + "px");
-					css.set("width", $box.w + "px");
-
-					collection.setCssTextAlignment(css, $textAlign.h, $textAlign.v);
-					collection.setCssFontWeight(css, $weight);
-
-					specs.push({
-						_name: "div",
-						_uri: "http://www.w3.org/1999/xhtml",
-						_text: text,
-						style: css
-					});
-
-					Dom.newDOMFragment(specs);
-					]]>
-				</DomContent>
-                <Color>$textColor</Color>
-                <Font>$textFont</Font>
-			</For>
-		</Behaviors>
-
-		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
-			<rect id="bg" />
-
-			<foreignObject id="content">
-				<div xmlns="http://www.w3.org/1999/xhtml" >
-					<div id="text">
-				    	<!-- content -->
-					</div>
-				</div>
-			</foreignObject>
-		</p:Content>
-	</Shape>
-
 	<Shape id="Dialog" displayName="Dialog" icon="Icons/Dialog.png">
 		<Properties>
 			<PropertyGroup>
@@ -1200,6 +1125,80 @@ MenuItem]]></Property>
 		<PropertyValue name="rounded">true</PropertyValue>
 		<PropertyValue name="toast">true</PropertyValue>
 	</Shortcut>
+
+	<Shape id="Text" displayName="Text" icon="Icons/Text.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">96,36</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Color" type="Color">#FFFFFF00</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Text">
+				<Property name="label" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: $textAlign, multi: true})"><![CDATA[Text]]></Property>
+				<Property name="weight" displayName="Font weight" type="Enum"
+					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">400</Property>
+				<Property name="textColor" displayName="Color" type="Color"><E>$$defaultTextColor</E></Property>
+				<Property name="textFont" displayName="Font" type="Font"><E>$$defaultTextFont</E></Property>
+
+				<Property name="textAlign" displayName="Text Alignment" type="Alignment">0,0</Property>
+			</PropertyGroup>
+		</Properties>
+		<Behaviors>
+			<For ref="bg">
+				<Box>$box</Box>
+				<Fill>$fillColor</Fill>
+			</For>
+
+			<For ref="content">
+				<Bound>new Bound(0, 0, $box.w, $box.h)</Bound>
+			</For>
+
+			<For ref="text">
+				<DomContent>
+					<![CDATA[
+
+					var specs = [];
+
+					var text = $label.value;
+
+					var css = new CSS();
+
+					css.set("display", "table-cell");
+					css.set("height", $box.h + "px");
+					css.set("width", $box.w + "px");
+
+					collection.setCssTextAlignment(css, $textAlign.h, $textAlign.v);
+					collection.setCssFontWeight(css, $weight);
+
+					specs.push({
+						_name: "div",
+						_uri: "http://www.w3.org/1999/xhtml",
+						_text: text,
+						style: css
+					});
+
+					Dom.newDOMFragment(specs);
+					]]>
+				</DomContent>
+				<Color>$textColor</Color>
+				<Font>$textFont</Font>
+			</For>
+		</Behaviors>
+
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+			<rect id="bg" />
+
+			<foreignObject id="content">
+				<div xmlns="http://www.w3.org/1999/xhtml" >
+					<div id="text">
+						<!-- content -->
+					</div>
+				</div>
+			</foreignObject>
+		</p:Content>
+	</Shape>
 
 	<Shape id="TextField" displayName="Text Field" icon="Icons/TextField.png">
 		<Properties>
