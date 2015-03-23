@@ -13,7 +13,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			<Property name="iconBg" displayName="Icon background color" type="Color">#ffffff49</Property>
 		</PropertyGroup>
 		<PropertyGroup name="Text">
-			<Property name="defaultTextFont" type="Font" displayName="Default Font">"Roboto Medium", Roboto, Arial,sans-serif|500|normal|14px</Property>
+			<Property name="defaultTextFont" type="Font" displayName="Default Font">Roboto, Arial, sans-serif|400|normal|14px</Property>
 			<Property name="defaultTextColor" type="Color" displayName="Default Text Color">#212121ff</Property>
 		</PropertyGroup>
 		<PropertyGroup name="Line">
@@ -307,7 +307,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			<For ref="bg">
 				<Box>$box</Box>
 				<Fill>$fillColor</Fill>
-			</For>			
+			</For>
 
 			<For ref="shadow">
 				<ApplyFilter>$shadow</ApplyFilter>
@@ -491,7 +491,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
 										xmlns="http://www.w3.org/2000/svg">
 
-			<defs>                
+			<defs>
 				<filter id="dropShadow">
 					<feFlood
 						flood-opacity="0.35"
@@ -515,6 +515,88 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			<use xlink:href="#card" id="shadow" p:heavy="true" p:filter="url(#dropShadow)" />
 			<use xlink:href="#card" />
 
+		</p:Content>
+	</Shape>
+
+
+	<Shape id="Text" displayName="Text" icon="Icons/Text.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">96,36</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Color" type="Color">#FFFFFF00</Property>
+			</PropertyGroup>
+
+			<PropertyGroup name="Text">
+				<Property name="label" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: $textAlign, multi: true})"><![CDATA[Text]]></Property>
+
+				<Property name="weight" displayName="Font weight" type="Enum"
+					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">400</Property>
+
+				<Property name="textColor" displayName="Color"
+					type="Color"><E>$$defaultTextColor</E></Property>
+				<Property name="textFont"
+					displayName="Font"
+					type="Font"><E>$$defaultTextFont</E></Property>
+
+				<Property name="textAlign" displayName="Text Alignment" type="Alignment">0,0</Property>
+			</PropertyGroup>
+		</Properties>
+		<Behaviors>
+			<For ref="bg">
+				<Box>$box</Box>
+				<Fill>$fillColor</Fill>
+			</For>
+
+			<For ref="content">
+				<Bound>new Bound(0, 0, $box.w, $box.h)</Bound>
+			</For>
+
+			<For ref="text">
+				<DomContent>
+					<![CDATA[
+
+					var specs = [];
+
+					var text = $label.value;
+
+					var css = new CSS();
+
+					css.set("display", "table-cell");
+					css.set("height", $box.h + "px");
+					css.set("width", $box.w + "px");
+
+					collection.setCssTextAlignment(css, $textAlign.h, $textAlign.v);
+
+					css.set("font-family", $textFont.getFamilies());
+					css.set("font-size", $textFont.getPixelHeight() + "px");
+					css.set("font-weight", $weight);
+
+					specs.push({
+						_name: "div",
+						_uri: "http://www.w3.org/1999/xhtml",
+						_text: text,
+						style: css
+					});
+
+					Dom.newDOMFragment(specs);
+					]]>
+				</DomContent>
+                <Color>$textColor</Color>
+			</For>
+		</Behaviors>
+
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+			<rect id="bg" />
+
+			<foreignObject id="content">
+				<div xmlns="http://www.w3.org/1999/xhtml" >
+					<div id="text">
+				    	<!-- content -->
+					</div>
+				</div>
+			</foreignObject>
 		</p:Content>
 	</Shape>
 
@@ -554,7 +636,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 		<p:Content	 xmlns:p="http://www.evolus.vn/Namespace/Pencil"
 										xmlns="http://www.w3.org/2000/svg">
 
-			<defs>                
+			<defs>
 				<filter id="dropShadow" height="1.28" y="-0.14">
 					<feFlood
 						flood-opacity="0.45"
