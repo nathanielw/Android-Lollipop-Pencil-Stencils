@@ -64,6 +64,10 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			}
 		}
 
+		collection.setCssFontWeight = function(css, fontWeight) {
+			css.set("font-weight", fontWeight);
+		}
+
 		]]>
 	</Script>
 
@@ -285,7 +289,6 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			<PropertyGroup>
 				<Property name="box" type="Dimension">96,36</Property>
 				<Property name="shadow" displayName="Shadow" type="Bool">true</Property>
-				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
 			</PropertyGroup>
 			<PropertyGroup name="Background">
 				<Property name="fillColor" displayName="Color" type="Color">#FFFFFF</Property>
@@ -293,6 +296,9 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 
 			<PropertyGroup name="Text">
 				<Property name="label" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: $textAlign, multi: false})"><![CDATA[BUTTON]]></Property>
+
+				<Property name="weight" displayName="Font weight" type="Enum"
+					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">500</Property>
 
 				<Property name="textColor" displayName="Color"
 					type="Color"><E>$$defaultTextColor</E></Property>
@@ -333,11 +339,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 					css.set("width", $box.w + "px");
 
 					collection.setCssTextAlignment(css, $textAlign.h, $textAlign.v);
-
-					if ($forceFont.value) {
-						css.set("font-family", "Roboto, sans-serif");
-						css.set("font-weight", "500");
-					}
+					collection.setCssFontWeight(css, $weight);
 
 					specs.push({
 						_name: "div",
@@ -530,15 +532,10 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 
 			<PropertyGroup name="Text">
 				<Property name="label" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: $textAlign, multi: true})"><![CDATA[Text]]></Property>
-
 				<Property name="weight" displayName="Font weight" type="Enum"
 					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">400</Property>
-
-				<Property name="textColor" displayName="Color"
-					type="Color"><E>$$defaultTextColor</E></Property>
-				<Property name="textFont"
-					displayName="Font"
-					type="Font"><E>$$defaultTextFont</E></Property>
+				<Property name="textColor" displayName="Color" type="Color"><E>$$defaultTextColor</E></Property>
+				<Property name="textFont" displayName="Font" type="Font"><E>$$defaultTextFont</E></Property>
 
 				<Property name="textAlign" displayName="Text Alignment" type="Alignment">0,0</Property>
 			</PropertyGroup>
@@ -568,10 +565,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 					css.set("width", $box.w + "px");
 
 					collection.setCssTextAlignment(css, $textAlign.h, $textAlign.v);
-
-					css.set("font-family", $textFont.getFamilies());
-					css.set("font-size", $textFont.getPixelHeight() + "px");
-					css.set("font-weight", $weight);
+					collection.setCssFontWeight(css, $weight);
 
 					specs.push({
 						_name: "div",
@@ -584,6 +578,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 					]]>
 				</DomContent>
                 <Color>$textColor</Color>
+                <Font>$textFont</Font>
 			</For>
 		</Behaviors>
 
@@ -711,7 +706,9 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 				<Property name="contentText" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: new Alignment(0, 0), multi: true})"><![CDATA[MenuItem*
 MenuItem
 MenuItem]]></Property>
-				<Property name="textFont" displayName="Default Font" type="Font">"Roboto Light", Roboto,sans-serif|300|normal|16px</Property>
+				<Property name="weight" displayName="Font weight" type="Enum"
+					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">300</Property>
+				<Property name="textFont" displayName="Default Font" type="Font">Roboto, sans-serif|300|normal|16px</Property>
 				<Property name="textColor" displayName="Text Color" type="Color"><E>$$defaultTextColor</E></Property>
 				<Property name="textAlign" displayName="Text Alignment" type="Alignment">1,1</Property>
 			</PropertyGroup>
@@ -755,10 +752,7 @@ MenuItem]]></Property>
 							css.set("background", "rgba(0, 0, 0, 0.05)");
 						}
 
-						if ($forceFont == "true") {
-							css.set("font-family", "Roboto, Roboto Light, sans-serif");
-							css.set("font-weight", "300");
-						}
+						collection.setCssFontWeight(css, $weight);
 
 						specs.push({
 							_name: "li",
@@ -1037,7 +1031,6 @@ MenuItem]]></Property>
 		<Properties>
 			<PropertyGroup>
 				<Property name="box" type="Dimension">113,32</Property>
-				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
 			</PropertyGroup>
 
 			<PropertyGroup name="Background">
@@ -1046,7 +1039,9 @@ MenuItem]]></Property>
 
 			<PropertyGroup name="Text">
 				<Property name="contentText" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: new Alignment(0, 0), multi: false})"><![CDATA[Tooltip text]]></Property>
-				<Property name="textFont" displayName="Default Font" type="Font">"Roboto Medium", Roboto,sans-serif|500|normal|14px</Property>
+				<Property name="weight" displayName="Font weight" type="Enum"
+					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">500</Property>
+				<Property name="textFont" displayName="Default Font" type="Font"><E>$$defaultTextFont</E></Property>
 				<Property name="textColor" displayName="Text Color" type="Color">#FFFFFFFF</Property>
 				<Property name="textAlign" displayName="Text Alignment" type="Alignment">1,1</Property>
 			</PropertyGroup>
@@ -1078,11 +1073,7 @@ MenuItem]]></Property>
 					css.set("width",($box.w - 16*2) + "px");
 
 					collection.setCssTextAlignment(css, $textAlign.h, $textAlign.v);
-
-					if ($forceFont == "true") {
-						css.set("font-family", "Roboto, Roboto Medium, sans-serif");
-						css.set("font-weight", "500");
-					}
+					collection.setCssFontWeight(css, $weight);
 
 					specs.push({
 						_name: "div",
@@ -1119,7 +1110,6 @@ MenuItem]]></Property>
 		<Properties>
 			<PropertyGroup>
 				<Property name="box" type="Dimension">220,48</Property>
-				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
 				<Property name="rounded" displayName="Rounded corners" type="Bool">true</Property>
 				<Property name="toast" displayName="Toast style" type="Bool">false</Property>
 			</PropertyGroup>
@@ -1131,7 +1121,9 @@ MenuItem]]></Property>
 
 			<PropertyGroup name="Text">
 				<Property name="contentText" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: new Alignment(0, 0), multi: false})"><![CDATA[Snackbar text]]></Property>
-				<Property name="textFont" displayName="Default Font" type="Font">Roboto,sans-serif|500|normal|14px</Property>
+				<Property name="weight" displayName="Font weight" type="Enum"
+					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">400</Property>
+				<Property name="textFont" displayName="Default Font" type="Font"><E>$$defaultTextFont</E></Property>
 				<Property name="textColor" displayName="Text Color" type="Color">#FFFFFFFF</Property>
 				<Property name="textAlign" displayName="Text Alignment" type="Alignment">0,1</Property>
 			</PropertyGroup>
@@ -1167,11 +1159,7 @@ MenuItem]]></Property>
 					css.set("width",($box.w - 24*2) + "px");
 
 					collection.setCssTextAlignment(css, $textAlign.h, $textAlign.v);
-
-					if ($forceFont == "true") {
-						css.set("font-family", "Roboto, Roboto Medium, sans-serif");
-						css.set("font-weight", "500");
-					}
+					collection.setCssFontWeight(css, $weight);
 
 					specs.push({
 						_name: "div",
@@ -1190,8 +1178,6 @@ MenuItem]]></Property>
 		</Behaviors>
 
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
-
-
 			<rect id="bg" />
 
 			<foreignObject id="content">
@@ -1219,7 +1205,6 @@ MenuItem]]></Property>
 		<Properties>
 			<PropertyGroup>
 				<Property name="box" type="Dimension">113,48</Property>
-				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
 				<Property name="focused" displayName="Focused" type="Bool">false</Property>
 				<Property name="disabled" displayName="Disabled" type="Bool">false</Property>
 			</PropertyGroup>
@@ -1231,14 +1216,18 @@ MenuItem]]></Property>
 
 			<PropertyGroup name="Content">
 				<Property name="contentText" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: new Bound(0, 22, $box.w, 20), font: $textFont, align: new Alignment(0, 0), multi: false})"><![CDATA[Content text]]></Property>
-				<Property name="textFont" displayName="Default Font" type="Font">Roboto,sans-serif|500|normal|16px</Property>
+				<Property name="contentWeight" displayName="Content font weight" type="Enum"
+					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">400</Property>
+				<Property name="textFont" displayName="Default Font" type="Font">Roboto,sans-serif|400|normal|16px</Property>
 				<Property name="textColor" displayName="Text Color" type="Color"><E>$$defaultTextColor</E></Property>
 				<Property name="textAlign" displayName="Text Alignment" type="Alignment">0,2</Property>
 			</PropertyGroup>
 
 			<PropertyGroup name="Label">
 				<Property name="labelText" displayName="Label Text" type="PlainText" p:editInfo="({targetName: 'fakeLabel', bound: new Bound(0, 0, $box.w, 20), font: $textFont, align: new Alignment(0, 0), multi: false})"><![CDATA[Label text]]></Property>
-				<Property name="labelFont" displayName="Default Font" type="Font">Roboto, sans-serif|500|normal|12px</Property>
+				<Property name="labelWeight" displayName="Label font weight" type="Enum"
+					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">400</Property>
+				<Property name="labelFont" displayName="Default Font" type="Font">Roboto, sans-serif|400|normal|12px</Property>
 				<Property name="labelColor" displayName="Text Color" type="Color">#757575FF</Property>
 				<Property name="labelAlign" displayName="Text Alignment" type="Alignment">0,0</Property>
 			</PropertyGroup>
@@ -1266,6 +1255,7 @@ MenuItem]]></Property>
 					labelCss.set("color", $disabled.value ? disabledColor : $labelColor.toRGBAString());
 					labelCss.set("font", $labelFont.toCSSFontString());
 					collection.setCssTextAlignment(labelCss, $labelAlign.h, $labelAlign.v);
+					collection.setCssFontWeight(labelCss, $labelWeight);
 
 					contentCss.set("padding", "8px 0px");
 					contentCss.set("display", "table-cell");
@@ -1274,13 +1264,7 @@ MenuItem]]></Property>
 					contentCss.set("font", $textFont.toCSSFontString());
 					contentCss.set("color", $disabled.value ? disabledColor : $textColor.toRGBAString());
 					collection.setCssTextAlignment(contentCss, $textAlign.h, $textAlign.v);
-
-					if ($forceFont == "true") {
-						contentCss.set("font-family", "Roboto, sans-serif");
-						contentCss.set("font-weight", "500");
-						labelCss.set("font-family", "Roboto, sans-serif");
-						labelCss.set("font-weight", "500");
-					}
+					collection.setCssFontWeight(contentCss, $contentWeight);
 
 					if (contentText.trim().length === 0 && !$focused.value) {
 						contentText = labelText;
@@ -1341,7 +1325,6 @@ MenuItem]]></Property>
 		<Properties>
 			<PropertyGroup>
 				<Property name="box" type="Dimension">360,48</Property>
-				<Property name="forceFont" displayName="Force Roboto font" type="Bool">false</Property>
 				<Property name="highlightText" displayName="Text color same as tab indicator" type="Bool">true</Property>
 			</PropertyGroup>
 
@@ -1355,7 +1338,9 @@ MenuItem]]></Property>
 
 			<PropertyGroup name="Text">
 				<Property name="contentText" displayName="Text Content" type="PlainText" p:editInfo="({targetName: 'content', bound: Bound.fromBox($box, 0, 5), font: $textFont, align: $textAlign, multi: true})"><![CDATA[ITEM 1*|ITEM 2|ITEM 3]]></Property>
-				<Property name="textFont" displayName="Default Font" type="Font">Roboto,sans-serif|500|normal|14px</Property>
+				<Property name="weight" displayName="Font weight" type="Enum"
+					p:enumValues="['100|Thin', '300|Light', '400|Normal', '500|Medium', '700|Bold', '900|Ultra-Bold']">500</Property>
+				<Property name="textFont" displayName="Default Font" type="Font"><E>$$defaultTextFont</E></Property>
 				<Property name="textColor" displayName="Text Color" type="Color">#FFFFFF99</Property>
 				<Property name="textAlign" displayName="Text Alignment" type="Alignment">1,1</Property>
 			</PropertyGroup>
@@ -1391,16 +1376,12 @@ MenuItem]]></Property>
 						css.set("width", $box.w + "px");
 
 						collection.setCssTextAlignment(css, $textAlign.h, $textAlign.v);
+						collection.setCssFontWeight(css, $weight);
 
 						if (text.match(/(.*)\*$/)) {
 							text = RegExp.$1;
 							css.set("box-shadow", "inset 0 -2px 0 0 " + $highlightColor.toRGBAString());
 							css.set("color", $highlightText.value ? $highlightColor.toRGBAString() : $textColor.toRGBString());
-						}
-
-						if ($forceFont == "true") {
-							css.set("font-family", "Roboto, sans-serif");
-							css.set("font-weight", "500");
 						}
 
 						specs.push({
