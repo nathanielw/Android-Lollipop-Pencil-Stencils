@@ -228,7 +228,7 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 			</PropertyGroup>
 			<PropertyGroup name="Background">
 				<Property name="fillColor" displayName="Sheet Color" type="Color"><E>$$neutralFillColor</E></Property>
-				<Property name="bgColor" displayName="Background Color" type="Color">#0000002B</Property>
+				<Property name="bgColor" displayName="Background Color" type="Color">#00000099</Property>
 			</PropertyGroup>
 		</Properties>
 
@@ -281,6 +281,27 @@ url="https://github.com/nathanielw/Andriod-Lollipop-Pencil-Stencils">
 	 		<rect id="shadow"
 			width="1" height="6"
 			style="fill: url(#shadowFill)" />
+		</p:Content>
+	</Shape>
+
+	<Shape id="Rectangle" displayName="Rectangle / Overlay Background" icon="Icons/Rectangle.png">
+		<Properties>
+			<PropertyGroup>
+				<Property name="box" type="Dimension">360,640</Property>
+			</PropertyGroup>
+			<PropertyGroup name="Background">
+				<Property name="fillColor" displayName="Fill Color" type="Color">#00000099</Property>
+			</PropertyGroup>
+		</Properties>
+
+		<Behaviors>
+			<For ref="bg">
+				<Box>new Dimension($box.w, $box.h)</Box>
+				<Fill>$fillColor</Fill>
+			</For>
+		</Behaviors>
+		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
+            <rect id="bg" />
 		</p:Content>
 	</Shape>
 
