@@ -1,10 +1,10 @@
 # Android Lollipop Stencils for Pencil
 
-Collection of common Android Lollipop UI elements for Pencil ([pencil.evolus.vn](http://pencil.evolus.vn/)). All in vector format.
+Collection of common Android Lollipop UI elements for [Pencil](https://github.com/prikhi/pencil). All in vector format.
 
-![Several of the included components](/misc/example.png)
+![Example mockup made with the collection](/misc/preview.png)
 
-_Some of the included components_
+_An example mockup using some of the included components_
 
 See [#2](/../../issues/2) for a full list of included components - requests & contributions welcome!
 
