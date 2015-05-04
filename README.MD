@@ -14,6 +14,9 @@ See [#2](/../../issues/2) for a full list of included components - requests & co
 3. In Pencil, install the .zip via _Tools_ > _Install new collection..._
 4. Make sure the _Hide Heavy Elements_ option in the _View_ menu is **unchecked**
 
+### Updating
+Right-click on the collection in Pencil's sidebar and choose _Uninstall this collection_ before repeating the installation steps.
+
 ## Notes
 Works best with the Roboto font installed.
 
