@@ -2,11 +2,14 @@
 
 Collection of common Android Lollipop UI elements for [Pencil](https://github.com/prikhi/pencil). All in vector format.
 
+*Check out my other stencil collections for Pencil at [nathanielw.github.io/pencil-stencils](http://nathanielw.github.io/pencil-stencils/)*
+
 ![Example mockup made with the collection](/misc/preview.png)
 
 _An example mockup using some of the included components_
 
 See [#2](/../../issues/2) for a full list of included components - requests & contributions welcome!
+
 
 ## Installation
 
@@ -24,6 +27,8 @@ Works best with the Roboto font installed.
 To change between Roboto's various font weights, use the _Font Weight_ option in the element right-click menu.
 
 Check out my [Material Icons for Pencil repo](https://github.com/nathanielw/Material-Icons-for-Pencil) if you want to use Google's Material Design Icons in your mockups.
+
+Want to showcase your awesome mockups? [Dani Guardiola's Material export template](https://github.com/DaniGuardiola/pencil-material-template) goes well with this stencil collection.
 
 ## License
 Released under the MIT License - see `LICENSE` for full text.
