@@ -14,7 +14,7 @@ See [#2](/../../issues/2) for a full list of included components - requests & co
 ## Installation
 
 
-1. Download the zip for the [latest release](https://github.com/nathanielw/Android-Lollipop-Pencil-Stencils/releases/latest).
+1. Download the zip for the [latest release](https://github.com/nathanielw/Android-Lollipop-Pencil-Stencils/releases/latest). (Make sure you grab the _android-lollipop-pencil-stencils-vx.x.x.zip_ file, **not** the source code zip).
 2. In Pencil, install the .zip via _Tools_ > _Install new collection..._
 3. Make sure the _Hide Heavy Elements_ option in the _View_ menu is **unchecked**
 
