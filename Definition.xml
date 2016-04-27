@@ -834,17 +834,24 @@ MenuItem]]></Property>
 
 		<Behaviors>
 			<For ref="bgRect">
-				<Bound>new Bound($disabled.value ? $prog.x + 6 : $prog.x, $box.h/2 - 1, $box.w - ($disabled.value ? $prog.x + 6 : $prog.x), 2)</Bound>
+				<Bound>new Bound($disabled.value ? $prog.x + ($box.h/2) + 1 : $prog.x, $box.h/2 - 1, $box.w - ($disabled.value ? $prog.x + ($box.h/2) + 1 : $prog.x), 2)</Bound>
 				<Fill>$bgFillColor</Fill>
 			</For>
 			<For ref="fgRect">
-				<Bound>new Bound(0, $box.h/2 - 1, $disabled.value ? $prog.x - 6 : $prog.x, 2)</Bound>
+				<Bound>new Bound(0, $box.h/2 - 1, $disabled.value ? $prog.x - ($box.h/2) - 1 : $prog.x, 2)</Bound>
 				<Fill>$disabled.value ? $bgFillColor : $fgFillColor</Fill>
 			</For>
 			<For ref="thumb">
 				<EllipseFit>new Dimension($disabled.value ? $box.h/1.5 : $box.h, $disabled.value ? $box.h/1.5 : $box.h)</EllipseFit>
 				<Fill>$disabled.value ? $bgFillColor : $fgFillColor</Fill>
-				<Transform>[translate($disabled.value ? $prog.x - $box.h/4 : $prog.x - $box.h/2, $disabled.value ? 1 : -1)]</Transform>
+				<Attr>
+					<Arg>"cy"</Arg>
+					<Arg>$box.h/2</Arg>
+				</Attr>
+				<Attr>
+					<Arg>"cx"</Arg>
+					<Arg>$prog.x</Arg>
+				</Attr>
 			</For>
 		</Behaviors>
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
