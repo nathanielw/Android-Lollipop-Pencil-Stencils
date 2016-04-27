@@ -787,7 +787,7 @@ MenuItem]]></Property>
 	<Shape id="ProgressBar" displayName="Progress Bar" icon="Icons/ProgressBar.png">
 		<Properties>
 			<PropertyGroup>
-				<Property name="box" type="Dimension" p:lockHeight="true">360,4</Property>
+				<Property name="box" type="Dimension">360,4</Property>
                 <Property name="prog" displayName="Progress" type="Handle" p:lockY="true" p:minX="0" p:maxX="$box.w">200,0</Property>
                 <Property name="buffer" displayName="Buffer Progress" type="Handle" p:lockY="true" p:minX="0" p:maxX="$box.w">280,0</Property>
 			</PropertyGroup>
@@ -819,7 +819,7 @@ MenuItem]]></Property>
 	<Shape id="Slider" displayName="Slider" icon="Icons/Slider.png">
 		<Properties>
 			<PropertyGroup>
-				<Property name="box" type="Dimension" p:lockHeight="true">360,10</Property>
+				<Property name="box" type="Dimension">360,10</Property>
                 <Property name="prog" displayName="Value" type="Handle" p:lockY="true" p:minX="0" p:maxX="$box.w">200,0</Property>
                 <Property name="disabled" displayName="Disabled" type="Bool">false</Property>
 			</PropertyGroup>
@@ -834,18 +834,17 @@ MenuItem]]></Property>
 
 		<Behaviors>
 			<For ref="bgRect">
-				<Box>new Dimension($box.w - ($disabled.value ? $prog.x + 6 : $prog.x), 2)</Box>
-				<Transform>[translate($disabled.value ? $prog.x + 6 : $prog.x, 0)]</Transform>
+				<Bound>new Bound($disabled.value ? $prog.x + 6 : $prog.x, $box.h/2 - 1, $box.w - ($disabled.value ? $prog.x + 6 : $prog.x), 2)</Bound>
 				<Fill>$bgFillColor</Fill>
 			</For>
 			<For ref="fgRect">
-				<Box>new Dimension($disabled.value ? $prog.x - 6 : $prog.x, 2)</Box>
+				<Bound>new Bound(0, $box.h/2 - 1, $disabled.value ? $prog.x - 6 : $prog.x, 2)</Bound>
 				<Fill>$disabled.value ? $bgFillColor : $fgFillColor</Fill>
 			</For>
 			<For ref="thumb">
-				<EllipseFit>new Dimension($disabled.value ? 8 : 12, $disabled.value ? 8 : 12)</EllipseFit>
+				<EllipseFit>new Dimension($disabled.value ? $box.h/1.5 : $box.h, $disabled.value ? $box.h/1.5 : $box.h)</EllipseFit>
 				<Fill>$disabled.value ? $bgFillColor : $fgFillColor</Fill>
-				<Transform>[translate($disabled.value ? $prog.x - 4 : $prog.x - 6, $disabled.value ? 1 : -1)]</Transform>
+				<Transform>[translate($disabled.value ? $prog.x - $box.h/4 : $prog.x - $box.h/2, $disabled.value ? 1 : -1)]</Transform>
 			</For>
 		</Behaviors>
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
@@ -858,7 +857,7 @@ MenuItem]]></Property>
 	<Shape id="Switch" displayName="Switch" icon="Icons/Switch.png">
 		<Properties>
 			<PropertyGroup>
-				<Property name="box" type="Dimension" p:lockHeight="true" p:lockWidth="true">36,14</Property>
+				<Property name="box" type="Dimension">36,14</Property>
                 <Property name="on" displayName="On" type="Bool">true</Property>
                 <Property name="disabled" displayName="Disabled" type="Bool">false</Property>
                 <Property name="shadow" displayName="Shadow" type="Bool">true</Property>
@@ -871,12 +870,21 @@ MenuItem]]></Property>
 		<Behaviors>
 			<For ref="bgRect">
 				<Box>$box</Box>
+				<Radius>$box.h/2</Radius>
 				<Fill>$disabled.value ? Color.fromString("#000000").hollowed(0.88) : $on.value ? $fillColor.hollowed(0.5) : Color.fromString("#000000").hollowed(0.74)</Fill>
 			</For>
 			<For ref="thumb">
 				<Fill>$disabled.value ? Color.fromString("#BDBDBD") : $on.value ? $fillColor : Color.fromString("#fafafa")</Fill>
-				<Transform>[translate($on.value ? $box.w - 10: 10,0)]</Transform>
 				<ApplyFilter>true</ApplyFilter>
+				<EllipseFit>new Dimension($box.h * 1.42, $box.h * 1.42)</EllipseFit>
+				<Attr>
+					<Arg>"cy"</Arg>
+					<Arg>$box.h/2</Arg>
+				</Attr>
+				<Attr>
+					<Arg>"cx"</Arg>
+					<Arg>$on.value ? $box.w - $box.h * 1.42/2: $box.h * 1.42/2</Arg>
+				</Attr>
 			</For>
 			<For ref="shadow">
 				<ApplyFilter>$shadow</ApplyFilter>
@@ -915,6 +923,7 @@ MenuItem]]></Property>
 	<Shape id="Checkbox" displayName="Checkbox" icon="Icons/Checkbox.png">
 		<Properties>
 			<PropertyGroup>
+				<Property name="box" type="Dimension" p:lockRatio="true">18,18</Property>
                 <Property name="on" displayName="On" type="Bool">true</Property>
                 <Property name="disabled" displayName="Disabled" type="Bool">false</Property>
 			</PropertyGroup>
@@ -927,8 +936,10 @@ MenuItem]]></Property>
 			<For ref="on">
 				<Visibility>$on</Visibility>
 				<Fill>$disabled.value ? Color.fromString("#000000").hollowed(0.74) : $fillColor</Fill>
+				<Transform>[scale($box.w/18, $box.h/18)]</Transform>
 			</For>
 			<For ref="off">
+				<Transform>[scale($box.w/18, $box.h/18)]</Transform>
 				<Visibility>$on.negative()</Visibility>
 				<StrokeColor>$disabled.value ? Color.fromString("#000000").hollowed(0.74) : Color.fromString("#000000").hollowed(0.54)</StrokeColor>
 			</For>
@@ -939,7 +950,7 @@ MenuItem]]></Property>
 				d="M 2,0 C 0.892,0 0,0.892 0,2 l 0,14 c 0,1.108 0.892,2 2,2 l 14,0 c 1.108,0 2,-0.892 2,-2 L 18,2 C 18,0.892 17.108,0 16,0 L 2,0 z m 12.5,3.90625 1.1875,1.1875 -8.125,8.125 L 6.96875,13.8125 6.375,13.21875 2.28125,9.125 3.46875,7.90625 6.96875,11.4375 14.5,3.90625 z" />
 			<rect
 				id="off"
-				rx="2px" ry="2px" width="16px" height="16px" x="1px" y="1px"
+				rx="1.4px" ry="1.4px" width="16px" height="16px" x="1px" y="1px"
 				style="fill:#000000;fill-opacity:0;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
 		</p:Content>
 	</Shape>
@@ -947,8 +958,9 @@ MenuItem]]></Property>
 	<Shape id="RadioButton" displayName="Radio Button" icon="Icons/RadioButton.png">
 		<Properties>
 			<PropertyGroup>
-                <Property name="on" displayName="On" type="Bool">true</Property>
-                <Property name="disabled" displayName="Disabled" type="Bool">false</Property>
+				<Property name="box" type="Dimension" p:lockRatio="true">20,20</Property>
+				<Property name="on" displayName="On" type="Bool">true</Property>
+				<Property name="disabled" displayName="Disabled" type="Bool">false</Property>
 			</PropertyGroup>
 			<PropertyGroup name="Background">
 				<Property name="fillColor" displayName="Color" type="Color"><E>$$fillColor</E></Property>
@@ -959,9 +971,28 @@ MenuItem]]></Property>
 			<For ref="inner">
 				<Visibility>$on</Visibility>
 				<Fill>$disabled.value ? Color.fromString("#000000").hollowed(0.74) : $fillColor</Fill>
+				<EllipseFit>$box.narrowed($box.w/2)</EllipseFit>
+				<Attr>
+					<Arg>"cy"</Arg>
+					<Arg>$box.h/2</Arg>
+				</Attr>
+				<Attr>
+					<Arg>"cx"</Arg>
+					<Arg>$box.w/2</Arg>
+				</Attr>
 			</For>
 			<For ref="outer">
 				<StrokeColor>$disabled.value ? Color.fromString("#000000").hollowed(0.74) : $on.value ? $fillColor : Color.fromString("#000000").hollowed(0.54)</StrokeColor>
+				<StrokeStyle>StrokeStyle.fromString((Math.max(Math.floor($box.w/10), 1)) + "|")</StrokeStyle>
+				<EllipseFit>$box.narrowed(Math.max(Math.floor($box.w/10), 1))</EllipseFit>
+				<Attr>
+					<Arg>"cy"</Arg>
+					<Arg>$box.h/2</Arg>
+				</Attr>
+				<Attr>
+					<Arg>"cx"</Arg>
+					<Arg>$box.w/2</Arg>
+				</Attr>
 			</For>
 		</Behaviors>
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil" xmlns="http://www.w3.org/2000/svg">
@@ -969,7 +1000,7 @@ MenuItem]]></Property>
 				rx="5px" ry="5px" cx="10px" cy="10px" />
 			<ellipse id="outer"
 				rx="9px" ry="9px" cx="10px" cy="10px"
-				style="fill:#000000;fill-opacity:0;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+				style="fill:#000000;fill-opacity:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
 		</p:Content>
 	</Shape>
 
@@ -1438,6 +1469,7 @@ MenuItem]]></Property>
 	<Shape id="Phone" displayName="Phone" icon="Icons/Phone.png">
 		<Properties>
 			<PropertyGroup>
+				<Property name="box" type="Dimension">396,798</Property>
 			</PropertyGroup>
 			<PropertyGroup name="Background">
 				<Property name="fillColor" displayName="Background color" type="Color">#000000FF</Property>
@@ -1452,7 +1484,7 @@ MenuItem]]></Property>
 					new SnappingData("InnerLeft", b.x + 18, "Left", true, this.id),
 					new SnappingData("InnerRight", b.x + b.width - 18, "Right", true, this.id),
 					new SnappingData("InnerTop", b.y + 68, "Top", false, this.id),
-					new SnappingData("InnerBottom", b.y + 68 + 640, "Bottom", false, this.id)
+					new SnappingData("InnerBottom", b.y + b.height - 89, "Bottom", false, this.id)
 				];
 				</Impl>
 			</Action>
@@ -1461,13 +1493,40 @@ MenuItem]]></Property>
 		<Behaviors>
 			<For ref="phone">
 				<Fill>$fillColor</Fill>
+				<D>
+					var edgeWidth = 18, // width of the phone edge
+						topHeight = 68, // distance from top of phone to top of screen
+						bottomHeight = 90, // distance from bottom of phone to bottom of screen
+						insideRight = $box.w - edgeWidth, // x-coord for the inside right screen edge
+						insideBottom = $box.h - bottomHeight;  // y-coord for the inside bottom screen edge
+
+					var curveHeight = 43,  // height of the curved portion of the phone
+						curveDistX = 30, // distance of the main curve vertices from the edge (x direction)
+						curveDistY = 12, // distance of the main curve vertices from the edge (y direction)
+						// coords for the curve anchors. Outer is the corner/curve closest to the phone edges, while inner is for the curve across the top and bottom of the phone.
+						anchorOuterHoriX = 16,
+						anchorOuterHoriY = 14
+						anchorOuterVertDistY = 17,
+						anchorInnerDistX = Math.min(142, $box.w*0.36),
+						anchorInnerDistY = -3;
+
+					[M(curveDistX,curveDistY),
+					C(anchorOuterHoriX,anchorOuterHoriY, 0,curveHeight-anchorOuterVertDistY, 0,curveHeight),
+					L(0,$box.h-curveHeight),
+					C(0,$box.h-curveHeight+anchorOuterVertDistY, anchorOuterHoriX,$box.h-anchorOuterHoriY, curveDistX,$box.h-curveDistY),
+					C(anchorInnerDistX,$box.h-anchorInnerDistY, $box.w-anchorInnerDistX,$box.h-anchorInnerDistY, $box.w-curveDistX,$box.h-curveDistY),
+					C($box.w-anchorOuterHoriX,$box.h-anchorOuterHoriY, $box.w,$box.h-curveHeight+anchorOuterVertDistY, $box.w,$box.h-curveHeight),
+					L($box.w,curveHeight),
+					C($box.w,curveHeight-anchorOuterVertDistY, $box.w-anchorOuterHoriX,anchorOuterHoriY, $box.w-curveDistX,curveDistY),
+					C($box.w-anchorInnerDistX,anchorInnerDistY, anchorInnerDistX,anchorInnerDistY, curveDistX,curveDistY),
+					z, M(edgeWidth,topHeight), L(insideRight,topHeight), L(insideRight,insideBottom), L(edgeWidth,insideBottom), z]</D>
 			</For>
 		</Behaviors>
 
 		<p:Content xmlns:p="http://www.evolus.vn/Namespace/Pencil"
 		           xmlns="http://www.w3.org/2000/svg">
 
-			<path id="phone" d="M 196.4687,0.00219 C 140.2618,-0.10611 84.5791,3.79919 30.1563,12.03339 16.1048,14.20359 10e-5,26.23049 0,42.93969 l 0,712.8437 c 1e-4,16.7092 16.1048,28.7359 30.1563,30.9062 112.0799,15.8578 229.0941,16.1103 335.6874,0 14.0514,-2.1703 30.1563,-14.197 30.1563,-30.9062 l 0,-712.8437 c 0,-16.7092 -16.105,-28.7361 -30.1563,-30.9063 -56.4368,-7.8015 -113.168,-11.923 -169.375,-12.0312 z m -178.4687,68 360,0 0,640 -360,0 0,-640 z"/>
+			<path id="phone" />
 
 		</p:Content>
 	</Shape>
