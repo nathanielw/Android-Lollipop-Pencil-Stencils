@@ -1,5 +1,13 @@
 # Android Lollipop Stencils for Pencil
 
+----
+
+## ⚠️ No longer actively developed
+Other commitments and the fact I no longer use Pencil mean this repo is no longer being actively worked on.
+Pull-requests with new features/fixes are still welcome, as are new issues, but my responses might not be the speediest 🙂
+
+----
+
 Collection of common Android Lollipop UI elements for [Pencil](https://github.com/prikhi/pencil). All in vector format.
 
 *Check out my other stencil collections for Pencil at [nathanielw.github.io/pencil-stencils](http://nathanielw.github.io/pencil-stencils/)*
